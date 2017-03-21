@@ -1,2 +1,3 @@
 body {
-  background-color: red !important; }
+  background-color: red !important;
+  box-sizing: border-box; }

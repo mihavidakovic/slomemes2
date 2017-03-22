@@ -1,25 +1,55 @@
 .comments-wrap
 	position: relative
-	height: calc(100vh - 70px)
-	max-height: calc(100vh - 70px) 
-	overflow: hidden
+	height: 100%
+	max-height: 100%
 	padding: 0
 	background-color: #FFF
 	border-left: 1px solid rgba(#000, 0.1)
-	h3
+	.comments-header
 		width: 100%
 		float: left
 		margin: 0 0px 10px 0
 		padding: 0 0px 10px 0
 		border-bottom: 1px solid rgba(#000, 0.1)
 		box-shadow: 0 5px 10px 0 rgba(#000, 0.05)
-		padding: 10px  
+		padding: 10px 15px
+		position: relative
+		z-index: 12
+		height: 40px
+		h3
+			float: left
+			margin: 0
+			padding: 0
+			font-size: 1.2em 
+		.hide-comments
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			width: 40px
+			cursor: pointer
+			border-left: 1px solid rgba(#000, 0.1)
+			+transition(600ms all ease-in-out)
+			&:hover
+				background-color: transparent !important
+				+linear-gradient(#fff, rgba(#000, 0.07))
+				border-left: 1px solid rgba(#000, 0.1)
+			&:active
+				background-color: transparent !important
+				+linear-gradient(#fff, rgba(#000, 0.1))
+				border-left: 1px solid rgba(#000, 0.1)
+			i
+				position: absolute
+				top: 50%
+				left: 50%
+				+transform(translate(-50%, -50%))
 	.comments
 		position: absolute
-		height: calc(100% - 45px)
-		max-height: calc(100% - 45px) 
-		padding: 5px 15px
-		margin: 30px 0 0
+		z-index: 10
+		height: calc(100% - 39px)
+		max-height: calc(100% - 39px) 
+		padding: 5px 0px
+		margin: 0px 0 0
 		list-style: none
 		-ms-overflow-y: auto
 		overflow-y: auto
@@ -29,9 +59,13 @@
 			width: 100%
 			float: left
 			border-bottom: 1px solid rgba(#000, 0.07)
-			padding: 10px 0
+			padding: 10px 15px
+			&:first-child
+				padding-top: 5px
 			&:last-child
 				border-bottom: none 
+			&:nth-child(even)
+				background-color: rgba(#000, 0.03) 
 			.top
 				width: 100%
 				float: left

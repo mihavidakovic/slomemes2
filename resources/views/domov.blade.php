@@ -5,6 +5,15 @@
     <div class="row">
       <div class="main">
         <div class="col-lg-8 col-md-8 col-sm-8 picture-wrap">
+            <div class="title">
+              <div class="votes">
+                <span><i class="ion-thumbsup"></i> 512</span>
+              </div>
+              <h2>Kurba sm blesav</h2>
+              <div class="share">
+                <p><a href="#"><i class="ion ion-social-facebook"></i> <span class="hidden-md hidden-sm hidden-xs">Deli s prijatelji</span></a></p>
+              </div>
+            </div>
             <div class="picture">
                 <div class="control dislike">
                     <i class="ion ion-thumbsdown"></i>
@@ -31,8 +40,11 @@
             <div style="clear: both;"></div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 comments-wrap">
-           <h3>Komentarji (252)</h3>
-           <ul class="comments">
+          <div class="comments-header">
+            <h3>Komentarji (252)</h3>
+            <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye-disabled"></i></div>
+          </div>
+          <ul class="comments">
                <li class="comment">
                    <div class="top">
                        <p><b>341 glasov</b> - <a href="#">wrvim3i4</a> - pred 5 minutami</p>

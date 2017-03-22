@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -45,16 +45,14 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
+                    <ul class="nav navbar-nav menu-levo">
                         <li class="active"><a href="">Domov</a></li>
                         <li><a href="">🔥 Majboljše 🔥</a></li>
                         <li><a href="">Nove</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
@@ -78,6 +76,15 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="dodaj">
+                                <div class="button">
+                                    <p>Dodaj meme</p>
+                                    <div class="chose">
+                                        <a href="#" class="ustvari"><i class="ion ion-paintbrush"></i> Ustvari</a>
+                                        <a href="#" class="dodaj"><i class="ion ion-plus"></i> Dodaj</a>
+                                    </div>
+                                </div>
+                            </li>
                         @endif
                     </ul>
                 </div>
@@ -88,8 +95,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
 
 </body>

@@ -15,3 +15,6 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+
+Route::get('meme/dodaj', 'PostsController@dodajGet');
+Route::get('meme/ustvari', 'PostsController@ustvariGet');

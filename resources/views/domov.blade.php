@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-      <div class="main">
+      <div class="main box col-lg-12">
         <div class="col-lg-8 col-md-8 col-sm-8 picture-wrap">
             <div class="title">
               <div class="votes">

@@ -1,0 +1,54 @@
+.comments-wrap
+	position: relative
+	height: calc(100vh - 70px)
+	max-height: calc(100vh - 70px) 
+	overflow: hidden
+	padding: 0
+	background-color: #FFF
+	border-left: 1px solid rgba(#000, 0.1)
+	h3
+		width: 100%
+		float: left
+		margin: 0 0px 10px 0
+		padding: 0 0px 10px 0
+		border-bottom: 1px solid rgba(#000, 0.1)
+		box-shadow: 0 5px 10px 0 rgba(#000, 0.05)
+		padding: 10px  
+	.comments
+		position: absolute
+		height: calc(100% - 45px)
+		max-height: calc(100% - 45px) 
+		padding: 5px 15px
+		margin: 30px 0 0
+		list-style: none
+		-ms-overflow-y: auto
+		overflow-y: auto
+		bottom: 0
+		box-shadow: 10px 0px 10px 0 rgba(#000, 0.02) inset
+		.comment
+			width: 100%
+			float: left
+			border-bottom: 1px solid rgba(#000, 0.07)
+			padding: 10px 0
+			&:last-child
+				border-bottom: none 
+			.top
+				width: 100%
+				float: left
+				font-size: 0.8em 
+				opacity: 0.8
+				margin-bottom: 5px
+				p
+					margin: 0
+					padding: 0
+					float: left
+					width: 100%
+			.content
+				width: 100%
+				float: left
+				p
+					width: 100%
+					float: left
+					font-size: 0.9em
+					margin: 0
+					padding: 0 

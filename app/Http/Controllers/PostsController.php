@@ -23,7 +23,6 @@ class PostsController extends Controller
 	    $p->title = $request->input('title');
 	    $p->url = $request->input('url');
 	    $p->user_id = Auth::user()->id;
-	    $p->visible = 1;
 	    $p->save();
 	    return 'dodano';
 	}

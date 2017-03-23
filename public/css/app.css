@@ -320,7 +320,7 @@ body {
       -webkit-background-size: contain;
       -o-background-size: contain;
       background-size: contain;
-      background-position: top center;
+      background-position: center center;
       background-repeat: no-repeat; }
       .picture-wrap .picture .show-picture .bottom-bar {
         position: fixed;

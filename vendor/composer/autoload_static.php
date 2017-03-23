@@ -272,6 +272,7 @@ class ComposerStaticInite55cbaef584894272d0a1c8c7249c10a
     );
 
     public static $classMap = array (
+        'AddVisibleToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_22_231330_add_visible_to_posts_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_22_212450_create_posts_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',

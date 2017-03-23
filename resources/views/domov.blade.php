@@ -9,7 +9,7 @@
               <div class="votes">
                 <span><i class="ion-thumbsup"></i> 512</span>
               </div>
-              <h2>Kurba sm blesav</h2>
+              <h2>{{$post->title}}</h2>
               <div class="share">
                 <p><a href="#"><i class="ion ion-social-facebook"></i> <span class="hidden-md hidden-sm hidden-xs">Deli s prijatelji</span></a></p>
               </div>
@@ -18,7 +18,7 @@
                 <div class="control dislike">
                     <i class="ion ion-thumbsdown"></i>
                 </div>
-                <div class="show-picture" style="background-image: url(https://scontent.flju1-1.fna.fbcdn.net/v/t31.0-8/17388945_252964241831147_5385662275682775643_o.jpg?oh=49f9e82d8dae929684881858ce187345&oe=596961EB);">
+                <div class="show-picture" style="background-image: url({{$post->url}});">
                     <div class="bottom-bar">
                         <ul>
                             <li class="votes">

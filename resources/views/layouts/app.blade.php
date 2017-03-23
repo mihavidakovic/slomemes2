@@ -47,7 +47,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav menu-levo">
                         <li class="active"><a href="">Domov</a></li>
-                        <li><a href="">🔥 Majboljše 🔥</a></li>
+                        <li><a href="">🔥 Najboljše 🔥</a></li>
                         <li><a href="">Nove</a></li>
                     </ul>
 

@@ -16,5 +16,20 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
-Route::get('meme/dodaj', 'PostsController@dodajGet');
-Route::get('meme/ustvari', 'PostsController@ustvariGet');
+// DODAJ MEME
+Route::get('meme/dodaj',[
+	'as' => 'meme-dodaj',
+	'uses' => 'PostsController@dodajGet'
+]);
+
+Route::post('meme/dodaj',[
+	'as' => 'meme-dodaj-post',
+	'uses' => 'PostsController@dodajPost'
+]);
+
+
+// USTVARI MEME
+Route::get('meme/ustvari',[
+	'as' => 'meme-ustvari',
+	'uses' => 'PostsController@ustvariGet'
+]);

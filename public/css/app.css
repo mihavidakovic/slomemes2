@@ -14,7 +14,40 @@ body {
   border-radius: 3px; }
 
 .subpage {
-  margin-top: 70px; }
+  margin-top: 70px;
+  margin-bottom: 20px; }
+  .subpage .inside {
+    width: 100%;
+    float: left; }
+    .subpage .inside header {
+      width: 100%;
+      float: left;
+      margin: 0 0px;
+      padding: 0 0px 10px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+      padding: 9px 15px;
+      position: relative;
+      z-index: 12;
+      height: 40px; }
+      .subpage .inside header p {
+        float: left;
+        margin: 0;
+        padding: 0;
+        font-size: 1.1em;
+        font-weight: 500; }
+    .subpage .inside .content {
+      width: 100%;
+      float: left;
+      background-color: #FFF;
+      padding: 10px; }
+      .subpage .inside .content p {
+        float: left;
+        margin: 0;
+        padding: 0;
+        font-size: 0.95em;
+        line-height: 1.7em;
+        color: rgba(0, 0, 0, 0.8); }
 
 .dodaj .inside {
   width: 100%;
@@ -496,9 +529,9 @@ body {
       width: 40px;
       cursor: pointer;
       border-left: 1px solid rgba(0, 0, 0, 0.1);
-      -webkit-transition: 600ms all ease-in-out;
-      -moz-transition: 600ms all ease-in-out;
-      transition: 600ms all ease-in-out; }
+      -webkit-transition: 100ms all ease-in-out;
+      -moz-transition: 100ms all ease-in-out;
+      transition: 100ms all ease-in-out; }
       .comments-wrap .comments-header .hide-comments:hover {
         background-color: transparent !important;
         background-color: #fff;
@@ -515,6 +548,7 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
+        font-size: 1.1em;
         -webkit-transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);

@@ -80,8 +80,8 @@
                                 <div class="button">
                                     <p>Dodaj meme</p>
                                     <div class="chose">
-                                        <a href="#" class="ustvari"><i class="ion ion-paintbrush"></i> Ustvari</a>
-                                        <a href="#" class="dodaj"><i class="ion ion-plus"></i> Dodaj</a>
+                                        <a href="{{ route('meme-ustvari') }}" class="ustvari"><i class="ion ion-paintbrush"></i> Ustvari</a>
+                                        <a href="{{ route('meme-dodaj') }}" class="dodaj"><i class="ion ion-plus"></i> Dodaj</a>
                                     </div>
                                 </div>
                             </li>

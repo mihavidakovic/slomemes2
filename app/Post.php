@@ -11,5 +11,15 @@ class Post extends Model
 	];
 	protected $table = 'posts';
 
+	public function comment()
+    {
+        return $this->hasOne('App\Comment');
+    }
+
+	public function glas()
+    {
+        return $this->hasOne('App\Glas');
+    }
+
 
 }

@@ -21,6 +21,7 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <?php setlocale(LC_TIME, 'sl') ?>
 </head>
 <body>
     <div id="app">

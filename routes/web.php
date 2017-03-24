@@ -25,6 +25,12 @@ Route::get('/',[
 ]);
 
 
+Route::get('meme/{id}',[
+	'as' => 'meme',
+	'uses' => 'HomeController@getMeme'
+]);
+
+
 // DODAJ MEME
 Route::get('meme/dodaj',[
 	'as' => 'meme-dodaj',
@@ -58,4 +64,10 @@ Route::get('post/{id}/downvote',[
 Route::get('add/{num}/posts',[
 	'as' => 'add-posts-faker',
 	'uses' => 'FakerController@addPosts'
+]);
+
+// KOMENTARJI
+Route::post('comment/{id}/add',[
+	'as' => 'add-comment',
+	'uses' => 'CommentsController@addComment'
 ]);

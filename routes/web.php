@@ -31,6 +31,13 @@ Route::get('meme/{id}',[
 ]);
 
 
+// PROFIL
+Route::get('uporabnik/{name}',[
+	'as' => 'profil',
+	'uses' => 'UserController@profilGet'
+]);
+
+
 // DODAJ MEME
 Route::get('meme/dodaj',[
 	'as' => 'meme-dodaj',

@@ -46,29 +46,7 @@
             <div style="clear: both;"></div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 comments-wrap">
-          <div class="comments-header">
-            <h3>Komentarji (252)</h3>
-            <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye"></i></div>
-          </div>
-          <ul class="comments">
-            @foreach($comments as $comment)
-               <li class="comment">
-                   <div class="top">
-                       <p><b>341 glasov</b> - <a href="#">wrvim3i4</a> - {{Carbon\Carbon::now()}}</p>
-                   </div>
-                   <div class="content">
-                       <p>{{$comment->content}}</p>
-                   </div>
-               </li>
-              @endforeach
-           </ul>
-           <div class="add-comment">
-             <form method="POST" action="{{route('add-comment', $post->id)}}">
-               <textarea name="content" placeholder="Napiši komentar"></textarea>
-               <button type="submit" class="btn btn-default"><i class="ion ion-android-send"></i></button>
-               {{ csrf_field() }}
-             </form>
-           </div> 
+          @include('partials.comments')
         </div>
       @else
         <div class="col-lg-8 col-md-8 col-sm-8 picture-wrap empty">

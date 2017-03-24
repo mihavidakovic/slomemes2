@@ -28,7 +28,7 @@ Route::get('/',[
 Route::get('meme/{id}',[
 	'as' => 'meme',
 	'uses' => 'HomeController@getMeme'
-]);
+])->where('id', '[0-9]+');
 
 
 // PROFIL

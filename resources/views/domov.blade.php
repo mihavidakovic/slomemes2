@@ -45,7 +45,7 @@
             </div>
             <div style="clear: both;"></div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 comments-wrap">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 comments-wrap">
           @include('partials.comments')
         </div>
       @else

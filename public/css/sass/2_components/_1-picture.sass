@@ -271,22 +271,53 @@
 										margin-left: 10px
 	.control
 		position: absolute
-		top: 50%
-		+transform(translateY(-50%))
-		background-color: $main-color
-		padding: 10px 20px
-		font-size: 2em
-		color: #FFF   
+		top: 0
+		width: 100px
+		height: 100% 
 		z-index: 10
 		cursor: pointer
 		+transition(80ms all ease-in-out)
+		+breakpoint(xs)
+			padding: 5px 10px
+			font-size: 1.4em
+		+breakpoint(xxs)
+			padding: 5px 10px
+			font-size: 1.4em
+		+breakpoint(xxxs)
+			padding: 5px 10px
+			font-size: 1.4em
 		&:hover
-			box-shadow: 0 2px 10px 0 rgba(#000, 0.1) 
-			background-color: lighten($main-color, 3%) 
+			i
+				box-shadow: 0 2px 10px 0 rgba(#000, 0.1) 
+				background-color: lighten($main-color, 3%) 
 		&:active
-			box-shadow: 0 2px 10px 0 rgba(#000, 0.1) 
-			background-color: darken($main-color, 1%) 
+			i
+				box-shadow: 0 2px 10px 0 rgba(#000, 0.1) 
+				background-color: darken($main-color, 1%) 
+
+		i
+			position: absolute
+			top: 50%
+			background-color: $main-color
+			font-size: 2em
+			color: #FFF
+			padding: 20px
+			+transform(translateY(-50%)) 
+			+breakpoint(xs)
+				font-size: 1.6em
+				padding: 15px
+			+breakpoint(xxs)
+				font-size: 1.6em
+				padding: 15px
+			+breakpoint(xxxs)
+				font-size: 1.4em
+				padding: 10px
+
 		&.dislike
 			left: 0
+			i
+				left: 0
 		&.like
 			right: 0
+			i
+				right: 0

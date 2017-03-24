@@ -5,6 +5,23 @@
 	padding: 0
 	background-color: #FFF
 	border-left: 1px solid rgba(#000, 0.1)
+	opacity: 1
+	+transition(200ms all ease-in-out)
+	+breakpoint(xs)
+		height: auto
+		float: left
+		border-top: 1px solid rgba(#000, 0.1)
+		margin-top: 20px
+	+breakpoint(xxs)
+		height: auto
+		float: left
+		border-top: 1px solid rgba(#000, 0.1)
+		margin-top: 20px
+	+breakpoint(xxxs)
+		height: auto
+		float: left
+		border-top: 1px solid rgba(#000, 0.1)
+		margin-top: 20px
 	.comments-header
 		width: 100%
 		float: left
@@ -21,29 +38,6 @@
 			margin: 0
 			padding: 0
 			font-size: 1.2em 
-		.hide-comments
-			position: absolute
-			top: 0
-			right: 0
-			height: 100%
-			width: 40px
-			cursor: pointer !important
-			border-left: 1px solid rgba(#000, 0.1)
-			+transition(100ms all ease-in-out)
-			&:hover
-				background-color: transparent !important
-				+linear-gradient(#fff, rgba(#000, 0.07))
-				border-left: 1px solid rgba(#000, 0.1)
-			&:active
-				background-color: transparent !important
-				+linear-gradient(#fff, rgba(#000, 0.1))
-				border-left: 1px solid rgba(#000, 0.1)
-			i
-				position: absolute
-				top: 50%
-				left: 50%
-				font-size: 1.1em 
-				+transform(translate(-50%, -50%))
 	.comments
 		position: absolute
 		z-index: 10
@@ -56,6 +50,21 @@
 		overflow-y: auto
 		bottom: 0
 		box-shadow: 10px 0px 10px 0 rgba(#000, 0.02) inset
+		+breakpoint(xs)
+			height: auto
+			position: static
+			overflow: visible
+			float: left
+		+breakpoint(xxs)
+			height: auto
+			position: static
+			overflow: visible
+			float: left
+		+breakpoint(xxxs)
+			height: auto
+			position: static
+			overflow: visible
+			float: left
 		.comment
 			width: 100%
 			float: left

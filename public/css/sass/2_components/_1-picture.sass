@@ -76,8 +76,16 @@
 			text-align: center
 			top: 50%
 			+transform(translateY(-50%))
+			+breakpoint(xs)
+				width: 60px
+			+breakpoint(xxs)
+				width: 60px
+			+breakpoint(xxxs)
+				width: 60px
+				font-size: 0.9em
 			i
 				margin-right: 4px
+				font-size: 1em 
 		h2
 			position: absolute
 			width: calc(100% - 80px - 150px)
@@ -88,6 +96,16 @@
 			top: 50%
 			left: 90px
 			+transform(translateY(-50%))
+			+breakpoint(xs)
+				width: calc(100% - 80px - 50px)
+				+ellipsis(calc(100% - 80px - 80px))
+			+breakpoint(xxs)
+				width: calc(100% - 80px - 50px)
+				+ellipsis(calc(100% - 80px - 80px))
+			+breakpoint(xxxs)
+				width: calc(100% - 80px - 50px)
+				+ellipsis(calc(100% - 80px - 80px))
+
 		.hide-comments
 			display: none
 		.share
@@ -96,6 +114,12 @@
 			float: right
 			position: relative
 			margin: 8px 0 0
+			+breakpoint(xs)
+				width: 50px
+			+breakpoint(xxs)
+				width: 50px
+			+breakpoint(xxxs)
+				width: 50px
 			p
 				margin: 0
 				padding: 0
@@ -125,6 +149,8 @@
 					.text
 						margin-left: 5px
 						font-weight: 600 
+						+breakpoint(xs)
+						display: none 
 	.picture
 		width: 100%
 		float: left

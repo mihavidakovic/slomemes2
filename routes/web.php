@@ -57,5 +57,5 @@ Route::get('post/{id}/downvote',[
 
 Route::get('add/{num}/posts',[
 	'as' => 'add-posts-faker',
-	'uses' => 'fakerController@addPosts'
+	'uses' => 'FakerController@addPosts'
 ]);

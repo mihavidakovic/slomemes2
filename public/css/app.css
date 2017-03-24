@@ -1039,6 +1039,7 @@ body {
     z-index: 10;
     height: calc(100% - 39px - 60px);
     max-height: calc(100% - 39px - 60px);
+    min-height: 200px;
     padding: 5px 0px;
     margin: 0px 0 0;
     list-style: none;

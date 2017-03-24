@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Glas;
 use Auth;
 
 class PostsController extends Controller
 {
+
+ 	public function __construct()
+    {
+        $this->middleware('auth');
+    }
 	// DODAJ MEME
 	public function dodajGet() {
 		return view('dodaj');
@@ -32,4 +38,28 @@ class PostsController extends Controller
 	public function ustvariGet() {
 		return view('ustvari');
 	}
+
+	// GLASOVANJE
+	public function postUpvote($id) {
+		$post = Post::find($id);
+		$glas = new Glas;
+		$glas->user_id = Auth::user()->id;
+		$glas->post_id = $id;
+		$glas->type = 1;
+		$glas->save();
+
+		return back();
+	}
+
+	public function postDownvote($id) {
+		$post = Post::find($id);
+		$glas = new Glas;
+		$glas->user_id = Auth::user()->id;
+		$glas->post_id = $id;
+		$glas->type = 2;
+		$glas->save();
+
+		return back();
+	}
+
 }

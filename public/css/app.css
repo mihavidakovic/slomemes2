@@ -271,6 +271,21 @@ body {
           top: 5px;
           left: 5px; }
 
+#chatter {
+  margin-top: 51px;
+  float: left;
+  width: 100%; }
+  #chatter .chatter_container {
+    display: block;
+    margin-top: 40px; }
+  #chatter #new_discussion_btn {
+    background-color: #E1464B;
+    color: #FFF;
+    border-radius: 3px;
+    padding: 10px 0; }
+    #chatter #new_discussion_btn:hover {
+      background-color: #e4585c; }
+
 .navbar.navbar-default {
   background-color: rgba(0, 0, 0, 0.85);
   border-color: transparent !important; }

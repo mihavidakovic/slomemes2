@@ -53,10 +53,11 @@ class HomeController extends Controller
             } else {
                 $post_id = $posti[rand(0, count($posti) - 1)];
                 $post = Post::find($post_id->id);
+                $comments = Comment::where('post_id', '=', $post->id)->get();
                 $upvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 1)->count();
                 $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
                 $skupni_glasovi = $upvoti - $downvoti;
-                return view('domov', ['post' => $post, 'skupni_glasovi' => $skupni_glasovi]);  
+                return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);  
        
             }
         }

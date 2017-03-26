@@ -8,6 +8,10 @@ use Auth;
 
 class CommentsController extends Controller
 {
+ 	public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function addComment($id, Request $request) {
     	$c = new Comment;
     	$c->post_id = $id;

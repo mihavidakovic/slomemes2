@@ -78,3 +78,5 @@ Route::post('comment/{id}/add',[
 	'as' => 'add-comment',
 	'uses' => 'CommentsController@addComment'
 ]);
+
+

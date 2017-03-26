@@ -21,7 +21,7 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-    <?php setlocale(LC_TIME, 'sl') ?>
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -47,9 +47,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav menu-levo">
-                        <li class="active"><a href="">Domov</a></li>
-                        <li><a href="">🔥 Najboljše 🔥</a></li>
-                        <li><a href="">Nove</a></li>
+                        <li class="active"><a href="{{route('domov')}}">Domov</a></li>
+                        <li class="disabled"><a href="">🔥 Najboljše 🔥</a></li>
+                        <li><a href="{{route('chatter.home')}}">Forum</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -103,7 +103,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/meme-generator.js') }}"></script>
-
+    @yield('js')
 
 </body>
 </html>

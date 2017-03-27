@@ -27,7 +27,7 @@
 	@if (count($errors) > 0)
 	    <div class="chatter-alert alert alert-danger">
 	    	<div class="container">
-	    		<p><strong><i class="chatter-alert-danger"></i> {{ Config::get('chatter.alert_messages.danger') }}</strong> Popravi naslednje napake:</p>
+	    		<p><strong><i class="chatter-alert-danger"></i> {{ Config::get('chatter.alert_messages.danger') }}</strong> Odpravi naslednje napake:</p>
 		        <ul>
 		            @foreach ($errors->all() as $error)
 		                <li>{{ $error }}</li>
@@ -44,8 +44,8 @@
 	    	<div class="col-md-3 left-column">
 	    		<!-- SIDEBAR -->
 	    		<div class="chatter_sidebar">
-					<button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> Nova {{ Config::get('chatter.titles.discussion') }}</button> 
-					<a href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-bubble"></i> Vse {{ Config::get('chatter.titles.discussions') }}</a>
+					<button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> Nova tema</button> 
+					<a href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-bubble"></i> Vse Kategorije</a>
 					<ul class="nav nav-pills nav-stacked">
 						<?php $categories = DevDojo\Chatter\Models\Models::category()->all(); ?>
 						@foreach($categories as $category)
@@ -84,7 +84,7 @@
 
 					        		<div class="chatter_middle">
 					        			<h3 class="chatter_middle_title">{{ $discussion->title }} <div class="chatter_cat" style="background-color:{{ $discussion->category->color }}">{{ $discussion->category->name }}</div></h3>
-					        			<span class="chatter_middle_details">Posted By: <span data-href="/user">{{ ucfirst($discussion->user->{Config::get('chatter.user.database_field_with_user_name')}) }}</span> {{ \Carbon\Carbon::createFromTimeStamp(strtotime($discussion->created_at))->diffForHumans() }}</span>
+					        			<span class="chatter_middle_details">Objavil: <span data-href="/user">{{ ucfirst($discussion->user->{Config::get('chatter.user.database_field_with_user_name')}) }}</span> {{ Jenssegers\Date\Date::parse(strtotime($discussion->created_at))->diffForHumans() }}</span>
 					        			@if($discussion->post[0]->markdown)
 					        				<?php $discussion_body = GrahamCampbell\Markdown\Facades\Markdown::convertToHtml( $discussion->post[0]->body ); ?>
 					        			@else

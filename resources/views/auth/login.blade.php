@@ -5,6 +5,18 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2 subpage">
             <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="social-login col-lg-12">
+                        <li class="facebook col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                           <a href="/login/facebook"><i class="ion ion-social-facebook"></i> Prijavi se s Facebook-om</a>
+                        </li>
+                        <li class="google col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                           <a href="/login/google"><i class="ion ion-social-google"></i> Prijavi se s Google-om</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-default">
                 <div class="panel-heading">Prijava</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">

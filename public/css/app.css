@@ -278,6 +278,8 @@ body {
   #chatter .chatter_container {
     display: block;
     margin-top: 40px; }
+  #chatter .chatter_body img {
+    max-width: 100%; }
   #chatter #new_discussion_btn {
     background-color: #E1464B;
     color: #FFF;

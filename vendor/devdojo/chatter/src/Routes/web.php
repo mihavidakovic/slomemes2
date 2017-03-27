@@ -139,6 +139,72 @@ Route::group([
             ]);
         });
     });
+
+    /*
+     * Post routes.
+     */
+    Route::group([
+        'as'     => 'posts.',
+        'prefix' => $route('post', 'posts'),
+    ], function () use ($middleware, $authMiddleware) {
+
+        // All posts view.
+        Route::get('/', [
+            'as'         => 'index',
+            'uses'       => 'ChatterPostController@index',
+            'middleware' => $middleware('post.index'),
+        ]);
+
+        // Create post view.
+        Route::get('create', [
+            'as'         => 'create',
+            'uses'       => 'ChatterPostController@create',
+            'middleware' => $authMiddleware('post.create'),
+        ]);
+
+        // Store post action.
+        Route::post('/', [
+            'as'         => 'store',
+            'uses'       => 'ChatterPostController@store',
+            'middleware' => $authMiddleware('post.store'),
+        ]);
+
+        /*
+         * Specific post routes.
+         */
+        Route::group([
+            'prefix' => '{post}',
+        ], function () use ($middleware, $authMiddleware) {
+
+            // Single post view.
+            Route::get('/', [
+                'as'         => 'show',
+                'uses'       => 'ChatterPostController@show',
+                'middleware' => $middleware('post.show'),
+            ]);
+
+            // Edit post view.
+            Route::get('edit', [
+                'as'         => 'edit',
+                'uses'       => 'ChatterPostController@edit',
+                'middleware' => $authMiddleware('post.edit'),
+            ]);
+
+            // Update post action.
+            Route::match(['PUT', 'PATCH'], '/', [
+                'as'         => 'update',
+                'uses'       => 'ChatterPostController@update',
+                'middleware' => $authMiddleware('post.update'),
+            ]);
+
+            // Destroy post action.
+            Route::delete('/', [
+                'as'         => 'destroy',
+                'uses'       => 'ChatterPostController@destroy',
+                'middleware' => $authMiddleware('post.destroy'),
+            ]);
+        });
+    });
 });
 
 /*

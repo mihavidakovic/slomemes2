@@ -286,6 +286,30 @@ body {
     #chatter #new_discussion_btn:hover {
       background-color: #e4585c; }
 
+.social-login {
+  width: 100%;
+  float: left;
+  padding: 0;
+  list-style: none; }
+  .social-login li.facebook a {
+    background-color: #3b5998; }
+    .social-login li.facebook a:hover {
+      background-color: #344e86; }
+  .social-login li.google a {
+    background-color: #ea4335; }
+    .social-login li.google a:hover {
+      background-color: #e82e1e; }
+  .social-login li a {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none; }
+    .social-login li a i {
+      margin-right: 10px;
+      font-size: 1.2em; }
+
 .navbar.navbar-default {
   background-color: rgba(0, 0, 0, 0.85);
   border-color: transparent !important; }

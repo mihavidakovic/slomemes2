@@ -63,7 +63,6 @@ class ChatterDiscussionController extends Controller
             'chatter_category_id' => 'required',
         ]);
 
-
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }

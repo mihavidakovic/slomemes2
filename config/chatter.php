@@ -16,7 +16,7 @@ return [
         'home'       => 'forum',
         'discussion' => 'tema',
         'category'   => 'kategorija',
-        'post'       => 'objava',
+        'post'       => 'posts',
         'register'   => 'register',
         'login'      => 'login',
     ],
@@ -32,9 +32,9 @@ return [
     */
 
     'titles' => [
-        'discussion'  => 'Tema',
-        'discussions' => 'Teme',
-        'category'    => 'Kategorija',
+        'discussion'  => 'Discussion',
+        'discussions' => 'Discussions',
+        'category'    => 'Category',
     ],
 
    /*
@@ -54,8 +54,8 @@ return [
     |
     */
 
-    'headline'      => 'Slomemes forum',
-    'description'   => 'Forum posvečen dank memeom',
+    'headline'      => 'Welcome to Chatter',
+    'description'   => 'A simple forum package for your Laravel app.',
     'headline_logo' => '/vendor/devdojo/chatter/assets/images/logo-light.png',
 
     /*
@@ -174,7 +174,7 @@ return [
     */
 
     'security' => [
-        'limit_time_between_posts' => true, //
+        'limit_time_between_posts' => false, //
         'time_between_posts'       => 1, // In minutes
     ],
 
@@ -190,7 +190,7 @@ return [
     |
     */
 
-    'editor' => 'tinymce',
+    'editor' => 'simplemde',
 
     /*
     |--------------------------------------------------------------------------
@@ -229,7 +229,7 @@ return [
     */
 
     'email' => [
-        'enabled' => false,
+        'enabled' => true,
         'view'    => 'chatter::email',
     ],
 

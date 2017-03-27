@@ -19,9 +19,21 @@ Route::get('home',[
 	'as' => 'home',
 	'uses' => 'HomeController@home'
 ]);
+
 Route::get('/',[
 	'as' => 'domov',
 	'uses' => 'HomeController@domov'
+]);
+
+
+Route::get('login/{service}',[
+	'as' => 'login-service',
+	'uses' => 'Auth\SocialLoginController@redirect'
+]);
+
+Route::get('login/{service}/callback',[
+	'as' => 'login-service-callback',
+	'uses' => 'Auth\SocialLoginController@callback'
 ]);
 
 

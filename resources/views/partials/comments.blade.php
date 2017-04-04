@@ -6,7 +6,7 @@
   @foreach($comments as $comment)
      <li class="comment">
          <div class="top">
-             <p><a href="#">{{$comment->user->name}}</a> <small>{{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</small></p>
+             <p><a href="{{route('profil', $comment->user->name)}}">{{$comment->user->name}}</a> <small>{{Jenssegers\Date\Date::parse($comment->created_at)->diffForHumans()}}</small></p>
          </div>
          <div class="content">
              <p>{{$comment->content}}</p>

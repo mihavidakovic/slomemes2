@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function domov()
     {
         if (Auth::check()) {
-            $posti = Post::whereBetween('posts.created_at', array(Carbon::now()->subHours(25), Carbon::now()))
+            $posti = Post::whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
                 ->doesntHave('glas')
                 ->take(100)
                 ->latest()
@@ -40,12 +40,11 @@ class HomeController extends Controller
                 $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
                 $skupni_glasovi = $upvoti - $downvoti;
                 return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);        
-
             }
         } else {
              $posti = DB::table('posts')
                 ->select('posts.id')
-                ->whereBetween('posts.created_at', array(Carbon::now()->subHours(25), Carbon::now()))
+                ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
                 ->get();
             if ($posti->isEmpty()) {
                 $post = [];

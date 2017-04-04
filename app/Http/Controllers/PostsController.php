@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Glas;
+use App\User;
 use Auth;
+use App\Achievements\Normie;
+use App\Achievements\MemeZacetnik;
+
 
 class PostsController extends Controller
 {
@@ -30,7 +34,15 @@ class PostsController extends Controller
 	    $p->url = $request->input('url');
 	    $p->user_id = Auth::user()->id;
 	    $p->save();
-	    return 'dodano';
+
+	    $user = User::find(Auth::user()->id);
+	    if ($user->rank == "9GAG podpornik") {
+	    	$user->addProgress(new Normie(), 1);
+	    } elseif ($user->rank == "Normie") {
+	    	$user->addProgress(new MemeZacetnik(), 1);
+	    }
+
+	    return back();
 	}
 
 
@@ -48,7 +60,7 @@ class PostsController extends Controller
 		$glas->type = 1;
 		$glas->save();
 
-		return back();
+		return redirect('/');
 	}
 
 	public function postDownvote($id) {
@@ -59,7 +71,7 @@ class PostsController extends Controller
 		$glas->type = 2;
 		$glas->save();
 
-		return back();
+		return redirect('/');
 	}
 
 }

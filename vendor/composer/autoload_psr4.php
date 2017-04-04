@@ -40,6 +40,8 @@ return array(
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
+    'Gstt\\Tests\\' => array($vendorDir . '/gstt/laravel-achievements/tests'),
+    'Gstt\\Achievements\\' => array($vendorDir . '/gstt/laravel-achievements/src'),
     'GrahamCampbell\\Markdown\\' => array($vendorDir . '/graham-campbell/markdown/src'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),

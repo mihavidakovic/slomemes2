@@ -32,7 +32,7 @@
                                 <h2>Naslov tega bednga mema z zelo dolgim naslovom fakkk</h2>
                             </li>
                             <li class="share">
-                                <p><a href="#"><i class="ion ion-social-facebook"></i> <span class="hidden-md hidden-sm hidden-xs">Deli s prijatelji</span></a></p>
+                                <p><a href="#"><i class="ion ion-social-facebook"></i> <span class="visible-xl visible-lg hidden-md hidden-sm hidden-xs">Deli s prijatelji</span></a></p>
                             </li>
                         </ul>
                     </div>  
@@ -78,7 +78,7 @@
                                 <h2>Naslov tega bednga mema z zelo dolgim naslovom fakkk</h2>
                             </li>
                             <li class="share">
-                                <p><a href="#"><i class="ion ion-social-facebook"></i> <span class="hidden-md hidden-sm hidden-xs">Deli s prijatelji</span></a></p>
+                                <a href="#"><i class="ion ion-social-facebook"></i> <span class="visible-xl visible-lg hidden-md hidden-sm hidden-xs">Deli s prijatelji</span></a>
                             </li>
                         </ul>
                     </div>  

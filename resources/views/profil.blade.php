@@ -11,10 +11,11 @@
                 <div class="center">
                   <img src="http://lorempixel.com/400/400/">
                   <h3>{{$user->name}}</h3>
+                  <p class="status">{{$user->rank}}</p>
                 </div>
                 <ul class="meni">
                   <li class="active">
-                    <a href="#">Moji memeji</a>
+                    <a href="#">Moji memeji ({{$posti->count()}})</a>
                   </li>
                   <li>
                     <a href="#">Všeč mi je</a>
@@ -27,65 +28,73 @@
             </div>
             <div class="profil-content">
               <ul class="posts-grid">
-                <li>
-                  <a href="#">
-                    <div class="preview" style="background: url(http://lorempixel.com/200/201/);">
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="preview" style="background: url(http://lorempixel.com/200/202/);">
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="preview" style="background: url(http://lorempixel.com/200/203/);">
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="preview" style="background: url(http://lorempixel.com/200/204/);">
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="preview" style="background: url(http://lorempixel.com/200/205/);">
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="preview" style="background: url(http://lorempixel.com/200/206/);">
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="preview" style="background: url(http://lorempixel.com/200/207/);">
-                    </div>
-                  </a>
-                </li>
+                @foreach($posti as $post)
+                  <li>
+                    <a href="{{route('meme', $post->id)}}">
+                      <div class="preview" style="background: url({{$post->url}});">
+                        <div class="title">
+                          <p>{{$post->title}}</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                @endforeach
               </ul>
+              {{ $posti->links() }}
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="col-lg-4 col-md-4 col-sm-4 sidebar">
         <div class="inside box">
           <header>
-            <p>Stranska vrstica</p>
+            <p>Nagrade</p>
           </header>
           <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <ul class="profil-nagrade">
+              <li>
+                  <div class="share">
+                    <p>Deli s prijatelji</p>
+                    <ul class="moznosti">
+                      <li class="fb">
+                        <a href="#">
+                            <i class="ion ion-social-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="messenger">
+                        <a href="#">
+                            <img src="{{asset('img/messenger.png')}}">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                <img src="http://lorempixel.com/300/320/">
+                <p>9GAG podpornik</p>
+                <small>{{Jenssegers\Date\Date::parse($user->created_at)->diffForHumans()}}</small>
+              </li>
+              @foreach($user->unlockedAchievements()->sortBy('unlocked_at') as $nagrada)
+                <li>
+                  <div class="share">
+                    <p>Deli s prijatelji</p>
+                    <ul class="moznosti">
+                      <li class="fb">
+                        <a href="#">
+                            <i class="ion ion-social-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="messenger">
+                        <a href="#">
+                            <img src="{{asset('img/messenger.png')}}">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="http://lorempixel.com/320/300/">
+                  <p>{{$nagrada->details->name}}</p>
+                  <small>{{Jenssegers\Date\Date::parse($nagrada->unlocked_at)->diffForHumans()}}</small>
+                </li>
+              @endforeach
+            </ul>
           </div>
 
         </div>      

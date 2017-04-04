@@ -49,6 +49,16 @@ Route::get('uporabnik/{name}',[
 	'uses' => 'UserController@profilGet'
 ]);
 
+Route::get('uporabnik/{name}/liked',[
+	'as' => 'profil-lied',
+	'uses' => 'UserController@profilGetLiked'
+]);
+
+Route::get('uporabnik/{name}/disliked',[
+	'as' => 'profil-dislied',
+	'uses' => 'UserController@profilGetDisliked'
+]);
+
 
 // DODAJ MEME
 Route::get('meme/dodaj',[

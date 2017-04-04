@@ -18,6 +18,6 @@ class CommentsController extends Controller
     	$c->user_id = Auth::user()->id;
     	$c->content = $request->input('content');
     	$c->save();
-    	return back();
+    	return redirect()->route('meme', $id);
     }
 }

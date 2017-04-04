@@ -1266,7 +1266,8 @@ body {
   z-index: 99999;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.8); }
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none; }
   .popup-wrap .popup {
     position: absolute;
     top: 50%;

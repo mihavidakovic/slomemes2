@@ -10,13 +10,27 @@
 		position: absolute
 		top: 50%
 		left: 50%
-		width: 400px
+		width: 350px
 		+transform(translate(-50%, -50%))
 		background-color: $main-color
 		padding: 20px
 		-webkit-box-shadow: 0 2px 20px 0 rgba(#000, 0.2) 
 		box-shadow: 0 2px 20px 0 rgba(#000, 0.2) 
 		color: #FFF 
+		+breakpoint(xl)
+			width: 400px
+		+breakpoint(lg)
+			width: 400px
+		+breakpoint(md)
+			width: 400px
+		+breakpoint(sm)
+			width: 400px
+		+breakpoint(xs)
+			width: 350px
+		+breakpoint(xxs)
+			width: 350px
+		+breakpoint(xxxs)
+			width: 350px
 		h2
 			margin: 0 0 20px
 			padding: 0

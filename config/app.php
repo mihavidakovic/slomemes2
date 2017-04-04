@@ -180,6 +180,7 @@ return [
         DevDojo\Chatter\ChatterServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Gstt\Achievements\AchievementsServiceProvider::class,
 
     ],
 

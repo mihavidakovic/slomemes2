@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Faker;
 use App\Post;
+use App\User;
+use Auth;
+use App\Achievements\Normie;
+use App\Achievements\MemeZacetnik;
+
 class FakerController extends Controller
 {
     public function addPosts($num) {
@@ -21,8 +26,15 @@ class FakerController extends Controller
 			$p = new Post;
 			$p->title = $faker->realText($maxNbChars = 120, $indexSize = 5);
 			$p->url = $faker->imageUrl($velikosti[$width], $velikosti[$height], $type[$rand_type]);
-			$p->user_id = 1;
+			$p->user_id = Auth::user()->id;
 			$p->save();
+			$user = User::find(Auth::user()->id);
+		    if ($user->rank == "9GAG podpornik") {
+		    	$user->addProgress(new Normie(), 1);
+		    } elseif ($user->rank == "Normie") {
+		    	$user->addProgress(new MemeZacetnik(), 1);
+		    }
 	    }
+	    return 'Dodano ' . $num . ' objav';
     }
 }

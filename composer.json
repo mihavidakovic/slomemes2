@@ -9,6 +9,7 @@
         "devdojo/chatter": "0.2.*",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/markdown": "^7.1",
+        "gstt/laravel-achievements": "^1.0",
         "jenssegers/date": "^3.2",
         "laravel/framework": "5.4.*",
         "laravel/socialite": "^3.0",

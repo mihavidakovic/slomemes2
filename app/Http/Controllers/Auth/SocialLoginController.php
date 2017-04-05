@@ -28,13 +28,13 @@ class SocialLoginController extends Controller
     	if (!$user) {
     		if ($service == "facebook") {
     			$user = User::create([
-	    			'name' => $serviceUser->getName(),
+	    			'name' => $serviceUser->getNickname(),
 	    			'email' => $serviceUser->getEmail(),
 	    			'avatar' => $serviceUser->getAvatar(),
  	   			]);
     		} elseif($service == "google") {
     			$user = User::create([
-	    			'name' => $serviceUser->getName(),
+	    			'name' => $serviceUser->getNickname(),
 	    			'email' => $serviceUser->getEmail(),
 	    			'avatar' => $serviceUser->getAvatar(),
 	    		]);

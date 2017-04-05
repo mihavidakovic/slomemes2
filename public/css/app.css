@@ -327,37 +327,64 @@ body {
         position: absolute;
         left: 0px;
         top: 0px;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.6);
         opacity: 0;
-        -webkit-transition: 100ms all ease-in-out;
-        -moz-transition: 100ms all ease-in-out;
-        transition: 100ms all ease-in-out; }
+        -webkit-transition: 200ms all ease-in-out;
+        -moz-transition: 200ms all ease-in-out;
+        transition: 200ms all ease-in-out; }
         .profil .sidebar .content .profil-nagrade li .share p {
           text-align: center;
           color: #FFF;
           font-size: 1.3em;
-          padding-top: 40px; }
+          padding-top: 50px;
+          width: 100%;
+          float: left; }
         .profil .sidebar .content .profil-nagrade li .share .moznosti {
-          width: 70%;
+          width: 100%;
           list-style: none;
           padding: 0;
-          margin: 0 auto;
-          display: block; }
+          float: left;
+          padding: 0 15%;
+          margin-top: 6px; }
           .profil .sidebar .content .profil-nagrade li .share .moznosti li {
-            width: 50%;
+            width: 45%;
+            height: 50px;
             float: left;
             text-align: center;
             font-size: 2em;
-            background-color: #fff; }
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            cursor: pointer;
+            -webkit-transition: 200ms all ease-in-out;
+            -moz-transition: 200ms all ease-in-out;
+            transition: 200ms all ease-in-out; }
+            .profil .sidebar .content .profil-nagrade li .share .moznosti li:hover {
+              box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.7);
+              background-color: #fff; }
+            .profil .sidebar .content .profil-nagrade li .share .moznosti li:first-child {
+              float: left; }
+            .profil .sidebar .content .profil-nagrade li .share .moznosti li:last-child {
+              float: right; }
+            .profil .sidebar .content .profil-nagrade li .share .moznosti li a {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
             .profil .sidebar .content .profil-nagrade li .share .moznosti li.fb a {
               padding: 0;
               margin: 0;
               color: #3b5998; }
             .profil .sidebar .content .profil-nagrade li .share .moznosti li.messenger a {
               padding: 0;
-              margin: 0; }
+              margin: 0;
+              text-align: center; }
               .profil .sidebar .content .profil-nagrade li .share .moznosti li.messenger a img {
-                margin-top: 10px;
+                float: left;
+                margin-top: 14px;
                 width: 20px;
                 height: 20px; }
       .profil .sidebar .content .profil-nagrade li img {

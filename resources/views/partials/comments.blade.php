@@ -13,6 +13,9 @@
          </div>
      </li>
     @endforeach
+    @if(!$comments->count())
+      <p class="no-comments">Trenutno še ni komentarjev. Bodi prvi!</p>
+    @endif
  </ul>
  <div class="add-comment">
    <form method="POST" action="{{route('add-comment', $post->id)}}">

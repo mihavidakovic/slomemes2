@@ -1218,6 +1218,19 @@ body {
         position: static;
         overflow: visible;
         float: left; } }
+    .comments-wrap .comments .no-comments {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      text-align: center;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 0.9em; }
     .comments-wrap .comments .comment {
       width: 100%;
       float: left;

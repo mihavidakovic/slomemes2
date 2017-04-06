@@ -10,6 +10,7 @@ return array(
     'AddForumPodpisToUsersTable' => $baseDir . '/database/migrations/2017_04_06_103125_add_forum_podpis_to_users_table.php',
     'AddMarkdownAndLockToChatterPosts' => $baseDir . '/database/migrations/2017_01_16_121747_add_markdown_and_lock_to_chatter_posts.php',
     'AddRankToUsersTable' => $baseDir . '/database/migrations/2017_04_04_202236_add_rank_to_users_table.php',
+    'AddRoleToUsersTable' => $baseDir . '/database/migrations/2017_04_06_113412_add_role_to_users_table.php',
     'AddSlugFieldForDiscussions' => $baseDir . '/database/migrations/2016_08_02_183143_add_slug_field_for_discussions.php',
     'AddVerifiedToUsersTable' => $baseDir . '/database/migrations/2017_04_05_194114_add_verified_to_users_table.php',
     'ChatterTableSeeder' => $baseDir . '/database/seeds/ChatterTableSeeder.php',

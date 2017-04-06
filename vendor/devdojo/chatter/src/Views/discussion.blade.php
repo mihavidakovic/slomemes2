@@ -97,7 +97,11 @@
 					        				@else
 					        					<?= $post->body; ?>
 					        				@endif
-					        				
+					        				@if($post->user->forum_podpis)
+						        				<div class="podpis">
+						        					{{$post->user->forum_podpis}}
+						        				</div>
+					        				@endif
 					        			</div>
 					        		</div>
 

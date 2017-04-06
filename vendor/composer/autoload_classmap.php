@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddColorRowToChatterDiscussions' => $baseDir . '/database/migrations/2016_08_03_121747_add_color_row_to_chatter_discussions.php',
+    'AddForumPodpisToUsersTable' => $baseDir . '/database/migrations/2017_04_06_103125_add_forum_podpis_to_users_table.php',
     'AddMarkdownAndLockToChatterPosts' => $baseDir . '/database/migrations/2017_01_16_121747_add_markdown_and_lock_to_chatter_posts.php',
     'AddRankToUsersTable' => $baseDir . '/database/migrations/2017_04_04_202236_add_rank_to_users_table.php',
     'AddSlugFieldForDiscussions' => $baseDir . '/database/migrations/2016_08_02_183143_add_slug_field_for_discussions.php',

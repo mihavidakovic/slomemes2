@@ -10,7 +10,7 @@
               <div class="header">
                 <div class="center">
                   <img src="http://lorempixel.com/400/400/">
-                  <h3>{{$user->name}}</h3>
+                  <h3>{{$user->name}} @if($user->verified === 1)<i class="ion ion-checkmark-circled" data-toggle="tooltip" data-placement="right"  title="Potrjen"></i>@endif</h3>
                   <p class="status">{{$user->rank}}</p>
                 </div>
                 <ul class="meni">

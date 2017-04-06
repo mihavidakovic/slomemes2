@@ -15,7 +15,7 @@
                 </div>
                 <ul class="meni">
                   <li class="active">
-                    <a href="#">Moji memeji ({{$posti->count()}})</a>
+                    <a href="#">Moji memeji <span>({{$posti->count()}})</span></a>
                   </li>
                   <li>
                     <a href="#">Všeč mi je</a>

@@ -82,10 +82,45 @@
 					color: #FFF 
 					&:hover
 						background-color: transparent
+						color: #FFF
+					&:active
+						color: #FFF 
+					&:focus
 						color: #FFF 
 			a
 				&:hover
 					color: rgba(#fff, 0.8) 
+				&:active
+					color: #FFF !important 
+				&:focus
+					color: #FFF !important
+			&.dropdown
+				&.open
+					a
+						background-color: transparent 
+				a
+					color: rgba(#fff, 0.8) 
+					&:hover
+						color: #FFF
+				.dropdown-menu
+					padding: 0
+					margin: 0
+					+breakpoint(xs)
+						background-color: #FFF 
+					+breakpoint(xxs)
+						background-color: #FFF 
+					+breakpoint(xxxs)
+						background-color: #FFF 
+					li
+						a
+							color: rgba(#000, 0.7) 
+							padding: 10px 20px 
+							&:hover
+								color: rgba(#000, 0.85) 
+								background-color: rgba(#000, 0.05) 
+							i
+								font-size: 1.1em
+								margin-right: 5px 
 	.dodaj
 		.button
 			background-color: $main-color

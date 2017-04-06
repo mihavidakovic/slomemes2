@@ -73,9 +73,32 @@
 			li
 				float: left
 				list-style: none
+				text-align: center
+				+breakpoint(xs)
+					width: 33.333%
+					font-size: 0.9em
+					a
+						padding: 10px 5px 
+					span
+						display: none
+				+breakpoint(xxs)
+					width: 33.333%
+					font-size: 0.9em
+					a
+						padding: 10px 5px 
+					span
+						display: none
+				+breakpoint(xxxs)
+					width: 33.333%
+					font-size: 0.9em
+					a
+						padding: 10px 5px 
+					span
+						display: none
 				&.active
 					a
 						color: $main-color 
+						font-weight: 600 
 						box-shadow: 0 -2px 0 0 $main-color inset
 						&:hover
 							color: $main-color 
@@ -89,8 +112,8 @@
 					color: rgba(#000, 0.5) 
 					+transition(150ms all ease-in-out)
 					&:hover
-						color: rgba(#000, 0.6)
-						box-shadow: 0 -2px 0 0 rgba(#000, 0.2) inset
+						color: rgba(#000, 0.8)
+						box-shadow: 0 -2px 0 0 rgba(#000, 0.4) inset
 	.profil-content
 		width: 100%
 		float: left
@@ -114,12 +137,27 @@
 				position: relative
 				display: flex
 				padding: 10px 
+				+breakpoint(sm)
+					width: 50%
+					height: 250px
+				+breakpoint(xs)
+					width: 50%
+					height: 250px
+				+breakpoint(xxs)
+					width: 50%
+					height: 250px
+				+breakpoint(xxxs)
+					width: 100%
+					height: 300px
 				.preview
 					position: absolute
 					width: calc(100% - 10px)
 					height: calc(100% - 10px)
 					top: 5px
 					left: 5px
+					-webkit-background-size: cover !important 
+					-o-background-size: cover !important 
+					background-size: cover !important 
 					&:hover
 						.title
 							opacity: 1

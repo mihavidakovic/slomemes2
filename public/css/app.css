@@ -231,9 +231,35 @@ body {
       box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.07); }
       .profil .header .meni li {
         float: left;
-        list-style: none; }
+        list-style: none;
+        text-align: center; }
+        @media (max-width: 767px) and (min-width: 641px) {
+          .profil .header .meni li {
+            width: 33.333%;
+            font-size: 0.9em; }
+            .profil .header .meni li a {
+              padding: 10px 5px; }
+            .profil .header .meni li span {
+              display: none; } }
+        @media (max-width: 640px) and (min-width: 481px) {
+          .profil .header .meni li {
+            width: 33.333%;
+            font-size: 0.9em; }
+            .profil .header .meni li a {
+              padding: 10px 5px; }
+            .profil .header .meni li span {
+              display: none; } }
+        @media (max-width: 480px) {
+          .profil .header .meni li {
+            width: 33.333%;
+            font-size: 0.9em; }
+            .profil .header .meni li a {
+              padding: 10px 5px; }
+            .profil .header .meni li span {
+              display: none; } }
         .profil .header .meni li.active a {
           color: #E1464B;
+          font-weight: 600;
           box-shadow: 0 -2px 0 0 #E1464B inset; }
           .profil .header .meni li.active a:hover {
             color: #E1464B;
@@ -248,8 +274,8 @@ body {
           -moz-transition: 150ms all ease-in-out;
           transition: 150ms all ease-in-out; }
           .profil .header .meni li a:hover {
-            color: rgba(0, 0, 0, 0.6);
-            box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.2) inset; }
+            color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.4) inset; }
   .profil .profil-content {
     width: 100%;
     float: left;
@@ -284,12 +310,31 @@ body {
         display: -ms-flexbox;
         display: flex;
         padding: 10px; }
+        @media (min-width: 768px) and (max-width: 991px) {
+          .profil .profil-content .posts-grid li {
+            width: 50%;
+            height: 250px; } }
+        @media (max-width: 767px) and (min-width: 641px) {
+          .profil .profil-content .posts-grid li {
+            width: 50%;
+            height: 250px; } }
+        @media (max-width: 640px) and (min-width: 481px) {
+          .profil .profil-content .posts-grid li {
+            width: 50%;
+            height: 250px; } }
+        @media (max-width: 480px) {
+          .profil .profil-content .posts-grid li {
+            width: 100%;
+            height: 300px; } }
         .profil .profil-content .posts-grid li .preview {
           position: absolute;
           width: calc(100% - 10px);
           height: calc(100% - 10px);
           top: 5px;
-          left: 5px; }
+          left: 5px;
+          -webkit-background-size: cover !important;
+          -o-background-size: cover !important;
+          background-size: cover !important; }
           .profil .profil-content .posts-grid li .preview:hover .title {
             opacity: 1; }
           .profil .profil-content .posts-grid li .preview .title {
@@ -421,8 +466,18 @@ body {
   #chatter .chatter_container {
     display: block;
     margin-top: 40px; }
-  #chatter .chatter_body img {
+  #chatter .chatter_middle .ago:hover {
+    text-decoration: underline; }
+  #chatter .chatter_middle .chatter_body img {
     max-width: 100%; }
+  #chatter .chatter_middle .chatter_body .podpis {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 0 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.9em; }
   #chatter #new_discussion_btn {
     background-color: #E1464B;
     color: #FFF;
@@ -555,9 +610,49 @@ body {
   .navbar .navbar-nav li.active a:hover {
     background-color: transparent;
     color: #FFF; }
+  .navbar .navbar-nav li.active a:active {
+    color: #FFF; }
+  .navbar .navbar-nav li.active a:focus {
+    color: #FFF; }
 
 .navbar .navbar-nav li a:hover {
   color: rgba(255, 255, 255, 0.8); }
+
+.navbar .navbar-nav li a:active {
+  color: #FFF !important; }
+
+.navbar .navbar-nav li a:focus {
+  color: #FFF !important; }
+
+.navbar .navbar-nav li.dropdown.open a {
+  background-color: transparent; }
+
+.navbar .navbar-nav li.dropdown a {
+  color: rgba(255, 255, 255, 0.8); }
+  .navbar .navbar-nav li.dropdown a:hover {
+    color: #FFF; }
+
+.navbar .navbar-nav li.dropdown .dropdown-menu {
+  padding: 0;
+  margin: 0; }
+  @media (max-width: 767px) and (min-width: 641px) {
+    .navbar .navbar-nav li.dropdown .dropdown-menu {
+      background-color: #FFF; } }
+  @media (max-width: 640px) and (min-width: 481px) {
+    .navbar .navbar-nav li.dropdown .dropdown-menu {
+      background-color: #FFF; } }
+  @media (max-width: 480px) {
+    .navbar .navbar-nav li.dropdown .dropdown-menu {
+      background-color: #FFF; } }
+  .navbar .navbar-nav li.dropdown .dropdown-menu li a {
+    color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px; }
+    .navbar .navbar-nav li.dropdown .dropdown-menu li a:hover {
+      color: rgba(0, 0, 0, 0.85);
+      background-color: rgba(0, 0, 0, 0.05); }
+    .navbar .navbar-nav li.dropdown .dropdown-menu li a i {
+      font-size: 1.1em;
+      margin-right: 5px; }
 
 .navbar .dodaj .button {
   background-color: #E1464B;

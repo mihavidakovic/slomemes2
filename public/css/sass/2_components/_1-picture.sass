@@ -21,6 +21,35 @@
 		box-shadow: 0 5px 10px 0 rgba(#000, 0.05)
 		padding: 10px
 		z-index: 12
+		.admin-functions
+			width: 80px
+			height: 100%
+			float: left
+			position: absolute
+			right: 0
+			top: 0
+			cursor: pointer
+			+align-items(stretch)
+			+display(flex)
+			+flex-direction(row)
+			+justify-content(flex-start)
+			.edit-button, .delete-button
+				height: 100%
+				position: relative
+				+flex(2)
+			.edit-button
+				&:hover
+					background-color: rgba(#000, 0.07) 
+			.delete-button
+				background-color: rgba(200, 10, 20, 0.8) 
+				color: #fff 
+				&:hover
+					background-color: rgba(200, 10, 20, 1) 
+			i
+				position: absolute
+				top: 50%
+				left: 50%
+				+transform(translate(-50%, -50%))
 		.votes
 			width: 70px
 			height: 30px
@@ -45,11 +74,16 @@
 				padding: 6px 0 0
 			i
 				margin-right: 4px
-				font-size: 1em 
+				font-size: 1em
+			.no-votes
+				width: 20px
+				height: 15px
+				display: block
+				background-color: rgba(#fff, 0.3) 
 		h2
 			position: absolute
-			width: calc(100% - 100px)
-			+ellipsis(calc(100% - 100px))
+			width: calc(100% - 100px - 80px)
+			+ellipsis(calc(100% - 100px - 90px))
 			margin: 0
 			padding: 0
 			font-size: 1.2em 
@@ -72,6 +106,12 @@
 				width: calc(100% - 100px)
 				+ellipsis(calc(100% - 100px))
 				left: 80px
+			span
+				width: 150px
+				height: 20px
+				background-color: rgba(#000, 0.1)
+				float: left
+				display: block 
 		.hide-comments
 			display: none
 	.picture
@@ -87,6 +127,33 @@
 		z-index: 10
 		+breakpoint(xs)
 			height: calc(100% - 40px) 
+		.empty
+			position: absolute
+			top: 50%
+			left: 50%
+			+transform(translate(-50%, -50%))
+			text-align: center
+			h3
+				font-size: 3em
+				font-weight: 300
+				color: rgba(#000, 0.6)
+				margin-bottom: 20px
+				+breakpoint(xs)
+					font-size: 2em 
+				+breakpoint(xxs)
+					font-size: 2em 
+				+breakpoint(xxxs)
+					font-size: 2em 
+			h4
+				font-size: 2em
+				font-weight: 300
+				color: rgba(#000, 0.6)  
+				+breakpoint(xs)
+					font-size: 1.5em 
+				+breakpoint(xxs)
+					font-size: 1.5em 
+				+breakpoint(xxxs)
+					font-size: 1.5em 
 		.show-picture
 			position: absolute
 			height: 100%

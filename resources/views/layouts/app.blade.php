@@ -76,6 +76,9 @@
                                         <a href="{{route('profil', Auth::user()->name)}}"><i class="ion ion-person"></i> Moj profil</a>
                                     </li>
                                     <li>
+                                        <a href="{{route('profil-uredi')}}"><i class="ion ion-edit"></i> Uredi profil</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -4,7 +4,7 @@
         @if($post)
           <span><i class="ion-thumbsup"></i> {{$skupni_glasovi}}</span>
         @else
-          <span><i class="ion-thumbsup"></i> <span></span></span>
+          <span><i class="ion-thumbsup"></i> 0</span>
         @endif
       </div>
       @if($post)
@@ -12,6 +12,14 @@
       @else
         <h2><span></span></h2>
       @endif
+      <div class="admin-functions">
+        <div class="edit-button">
+          <i class="ion ion-edit"></i>
+        </div>
+        <div class="delete-button">
+          <i class="ion ion-ios-trash"></i>
+        </div>
+      </div>
       <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye-disabled"></i></div>
     </div>
     <div class="picture">
@@ -41,7 +49,7 @@
                     </a>
                   </li>
                   <li class="messenger">
-                    <div class="fb-send" data-href="https://developers.facebook.com/docs/plugins/"></div>
+                    <a href=”fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=123456789”>Send In Messenger</a>
                     <a href="#">
                       <div class="inside">
                         <img src="{{asset('img/messenger.svg')}}">
@@ -53,6 +61,10 @@
             </div>  
         </div>
         @else
+          <div class="empty">
+            <h3>:(</h3>
+            <h4>Trenutno ni na voljo noben meme</h4>
+          </div>
         @endif
       @if($post)
         <a href="{{ route('post-upvote', $post->id) }}">

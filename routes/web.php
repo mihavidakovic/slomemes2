@@ -60,6 +60,16 @@ Route::get('uporabnik/{name}/disliked',[
 ]);
 
 
+// UREDI PROFIL
+Route::get('profil/uredi',[
+	'as' => 'profil-uredi',
+	'uses' => 'UserController@profilUrediGet'
+]);
+Route::post('profil/uredi',[
+	'uses' => 'UserController@profilUrediPost'
+]);
+
+
 // DODAJ MEME
 Route::get('meme/dodaj',[
 	'as' => 'meme-dodaj',

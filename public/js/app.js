@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	var link = "https://developers.facebook.com/docs/sharing/messenger";
+    var id = $('.picture').attr("data-id");
+	var link = "http://slomemes.si/meme/" + id;
 	var app_id = 239832329821923;
     $('[data-toggle="tooltip"]').tooltip(); 
     $('.comments-header .hide-comments').click(function() {

@@ -22,7 +22,7 @@
       </div>
       <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye-disabled"></i></div>
     </div>
-    <div class="picture">
+    <div class="picture" data-id="{{$post->id}}">
       <div class="bottom-bar">
         <div class="infos">
           <ul class="quick-info">

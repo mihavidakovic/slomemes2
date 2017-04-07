@@ -646,7 +646,8 @@ body {
       background-color: #FFF; } }
   .navbar .navbar-nav li.dropdown .dropdown-menu li a {
     color: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    text-align: center; }
     .navbar .navbar-nav li.dropdown .dropdown-menu li a:hover {
       color: rgba(0, 0, 0, 0.85);
       background-color: rgba(0, 0, 0, 0.05); }
@@ -787,6 +788,75 @@ body {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
     padding: 10px;
     z-index: 12; }
+    .picture-wrap .title .admin-functions {
+      width: 80px;
+      height: 100%;
+      float: left;
+      position: absolute;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+      -webkit-box-align: stretch;
+      -moz-box-align: stretch;
+      box-align: stretch;
+      -webkit-align-items: stretch;
+      -moz-align-items: stretch;
+      -ms-align-items: stretch;
+      -o-align-items: stretch;
+      align-items: stretch;
+      -ms-flex-align: stretch;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      -webkit-box-pack: start;
+      -moz-box-pack: start;
+      box-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      -ms-justify-content: flex-start;
+      -o-justify-content: flex-start;
+      justify-content: flex-start;
+      -ms-flex-pack: start; }
+      .picture-wrap .title .admin-functions .edit-button, .picture-wrap .title .admin-functions .delete-button {
+        height: 100%;
+        position: relative;
+        -webkit-box-flex: 2;
+        -moz-box-flex: 2;
+        box-flex: 2;
+        -webkit-flex: 2;
+        -moz-flex: 2;
+        -ms-flex: 2;
+        flex: 2; }
+      .picture-wrap .title .admin-functions .edit-button:hover {
+        background-color: rgba(0, 0, 0, 0.07); }
+      .picture-wrap .title .admin-functions .delete-button {
+        background-color: rgba(200, 10, 20, 0.8);
+        color: #fff; }
+        .picture-wrap .title .admin-functions .delete-button:hover {
+          background-color: #c80a14; }
+      .picture-wrap .title .admin-functions i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
     .picture-wrap .title .votes {
       width: 70px;
       height: 30px;
@@ -819,11 +889,16 @@ body {
       .picture-wrap .title .votes i {
         margin-right: 4px;
         font-size: 1em; }
+      .picture-wrap .title .votes .no-votes {
+        width: 20px;
+        height: 15px;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.3); }
     .picture-wrap .title h2 {
       position: absolute;
-      width: calc(100% - 100px);
+      width: calc(100% - 100px - 80px);
       display: inline-block;
-      max-width: calc(100% - 100px);
+      max-width: calc(100% - 100px - 90px);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -878,6 +953,12 @@ body {
           white-space: nowrap;
           word-wrap: normal;
           left: 80px; } }
+      .picture-wrap .title h2 span {
+        width: 150px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+        float: left;
+        display: block; }
     .picture-wrap .title .hide-comments {
       display: none; }
   .picture-wrap .picture {
@@ -894,6 +975,43 @@ body {
     @media (max-width: 767px) and (min-width: 641px) {
       .picture-wrap .picture {
         height: calc(100% - 40px); } }
+    .picture-wrap .picture .empty {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center; }
+      .picture-wrap .picture .empty h3 {
+        font-size: 3em;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 20px; }
+        @media (max-width: 767px) and (min-width: 641px) {
+          .picture-wrap .picture .empty h3 {
+            font-size: 2em; } }
+        @media (max-width: 640px) and (min-width: 481px) {
+          .picture-wrap .picture .empty h3 {
+            font-size: 2em; } }
+        @media (max-width: 480px) {
+          .picture-wrap .picture .empty h3 {
+            font-size: 2em; } }
+      .picture-wrap .picture .empty h4 {
+        font-size: 2em;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.6); }
+        @media (max-width: 767px) and (min-width: 641px) {
+          .picture-wrap .picture .empty h4 {
+            font-size: 1.5em; } }
+        @media (max-width: 640px) and (min-width: 481px) {
+          .picture-wrap .picture .empty h4 {
+            font-size: 1.5em; } }
+        @media (max-width: 480px) {
+          .picture-wrap .picture .empty h4 {
+            font-size: 1.5em; } }
     .picture-wrap .picture .show-picture {
       position: absolute;
       height: 100%;
@@ -1218,6 +1336,19 @@ body {
         position: static;
         overflow: visible;
         float: left; } }
+    .comments-wrap .comments .no-comments {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      text-align: center;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 0.9em; }
     .comments-wrap .comments .comment {
       width: 100%;
       float: left;

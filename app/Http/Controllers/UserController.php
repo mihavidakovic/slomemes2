@@ -28,7 +28,7 @@ class UserController extends Controller
 
     	return response()->json($posti);
     }
-
+ 
     public function profilGetDisliked($name) {
     	$user = User::where('name', '=', $name)->first();
     	$posti = DB::table('posts')
@@ -37,5 +37,26 @@ class UserController extends Controller
     				->get();
 
     	return response()->json($posti);
+    }
+
+    public function profilUrediGet() {
+        if (Auth::check()) {
+            $user = User::find(Auth::user()->id);
+            return view('uredi-profil', ['user' => $user]);
+        }
+        return redirect()->route('domov');
+    }
+    public function profilUrediPost(Request $request) {
+        if (Auth::check()) {
+             $this->validate($request, [
+                'forum_podpis' => 'max:100',
+            ]);
+            $user = User::find(Auth::user()->id);
+            $user->forum_podpis = $request->input('forum_podpis');
+            $user->save();
+            \Session::flash('flash_message','Spremembe uspešno shranjene.');
+            return back();
+        }
+        return redirect()->route('domov');
     }
 }

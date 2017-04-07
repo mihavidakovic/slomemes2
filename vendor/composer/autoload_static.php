@@ -345,6 +345,7 @@ class ComposerStaticInite55cbaef584894272d0a1c8c7249c10a
         'AddForumPodpisToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_06_103125_add_forum_podpis_to_users_table.php',
         'AddMarkdownAndLockToChatterPosts' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_121747_add_markdown_and_lock_to_chatter_posts.php',
         'AddRankToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_04_202236_add_rank_to_users_table.php',
+        'AddRoleToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_06_113412_add_role_to_users_table.php',
         'AddSlugFieldForDiscussions' => __DIR__ . '/../..' . '/database/migrations/2016_08_02_183143_add_slug_field_for_discussions.php',
         'AddVerifiedToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_05_194114_add_verified_to_users_table.php',
         'ChatterTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ChatterTableSeeder.php',

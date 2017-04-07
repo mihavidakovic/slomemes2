@@ -8,7 +8,7 @@ $(document).ready(function(){
     $('.picture-wrap .title .hide-comments').click(function() {
     	$('.main').removeClass('comments-off');
     });
-    $('.share-bar .messenger').click(function() {
+    $('.sharing .messenger').click(function() {
     	window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
     });
 

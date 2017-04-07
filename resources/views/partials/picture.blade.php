@@ -23,6 +23,36 @@
       <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye-disabled"></i></div>
     </div>
     <div class="picture">
+      <div class="bottom-bar">
+        <div class="infos">
+          <ul class="quick-info">
+            <li>
+              <p><i class="ion ion-person"></i> {{$post->user->name}}</p>
+            </li>
+            <li>
+              <p><i class="ion ion-android-time"></i> {{Jenssegers\Date\Date::parse($post->created_at)->diffForHumans()}}</p>
+            </li>
+          </ul>
+        </div>
+        <ul class="sharing">
+          <li class="facebook">
+            <a href="#">
+              <div class="inside">
+                <i class="ion ion-social-facebook"></i>
+                <p>Deli na Facebook-u</p>
+              </div>
+            </a>
+          </li>
+          <li class="messenger">
+            <a href="#">
+              <div class="inside">
+                <img src="{{asset('img/messenger.svg')}}">
+                <p>Pošlji kot sporočilo</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>  
       @if($post)
         <a href="{{ route('post-downvote', $post->id) }}">
           <div class="control dislike">
@@ -38,26 +68,6 @@
       @endif
         @if($post)
         <div class="show-picture" style="background-image: url({{$post->url}});">
-            <div class="share-bar">
-                <ul>
-                  <li class="facebook">
-                    <a href="#">
-                      <div class="inside">
-                        <i class="ion ion-social-facebook"></i>
-                        <p>Deli na Facebook-u</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="messenger">
-                    <a href="#">
-                      <div class="inside">
-                        <img src="{{asset('img/messenger.svg')}}">
-                        <p>Pošlji kot sporočilo</p>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-            </div>  
         </div>
         @else
           <div class="empty">

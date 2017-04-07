@@ -25,6 +25,16 @@ Route::get('/',[
 	'uses' => 'HomeController@domov'
 ]);
 
+Route::get('posti',[
+	'as' => 'posti',
+	'uses' => 'HomeController@posti'
+]);
+
+Route::get('test',[
+	'as' => 'test',
+	'uses' => 'HomeController@test'
+]);
+
 
 Route::get('login/{service}',[
 	'as' => 'login-service',

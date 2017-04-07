@@ -12,4 +12,10 @@ $(document).ready(function(){
     	window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
     });
 
+    $.getJSON('/posti', function(data){
+        $.each(data.posti, function (key, data) {
+            $('.test-posti').append('<li style="margin-bottom: 20px;"><p>' + data.title + '</p><img src="' + data.url + '"></li>');
+        });
+    });
+
 });

@@ -961,6 +961,253 @@ body {
         display: block; }
     .picture-wrap .title .hide-comments {
       display: none; }
+  .picture-wrap .bottom-bar {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 50;
+    box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.1); }
+    .picture-wrap .bottom-bar .infos {
+      width: 40%;
+      height: 100%;
+      position: relative;
+      float: left; }
+      @media (min-width: 1200px) {
+        .picture-wrap .bottom-bar .infos {
+          display: inline; } }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .picture-wrap .bottom-bar .infos {
+          display: inline; } }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .picture-wrap .bottom-bar .infos {
+          display: inline; } }
+      @media (max-width: 767px) and (min-width: 641px) {
+        .picture-wrap .bottom-bar .infos {
+          display: none; } }
+      @media (max-width: 640px) and (min-width: 481px) {
+        .picture-wrap .bottom-bar .infos {
+          display: none; } }
+      @media (max-width: 480px) {
+        .picture-wrap .bottom-bar .infos {
+          display: none; } }
+      .picture-wrap .bottom-bar .infos ul.quick-info {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        float: left;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        -webkit-box-align: stretch;
+        -moz-box-align: stretch;
+        box-align: stretch;
+        -webkit-align-items: stretch;
+        -moz-align-items: stretch;
+        -ms-align-items: stretch;
+        -o-align-items: stretch;
+        align-items: stretch;
+        -ms-flex-align: stretch;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        box-direction: normal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-direction: row;
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        box-pack: start;
+        -webkit-justify-content: flex-start;
+        -moz-justify-content: flex-start;
+        -ms-justify-content: flex-start;
+        -o-justify-content: flex-start;
+        justify-content: flex-start;
+        -ms-flex-pack: start; }
+        .picture-wrap .bottom-bar .infos ul.quick-info li {
+          -webkit-box-flex: 1;
+          -moz-box-flex: 1;
+          box-flex: 1;
+          -webkit-flex: 1;
+          -moz-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          position: relative;
+          height: 100%;
+          float: left; }
+          .picture-wrap .bottom-bar .infos ul.quick-info li p {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 0.9em;
+            color: rgba(0, 0, 0, 0.5); }
+            .picture-wrap .bottom-bar .infos ul.quick-info li p i {
+              font-size: 1em;
+              margin-right: 5px; }
+    .picture-wrap .bottom-bar ul.sharing {
+      float: right;
+      position: relative;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      -webkit-box-align: stretch;
+      -moz-box-align: stretch;
+      box-align: stretch;
+      -webkit-align-items: stretch;
+      -moz-align-items: stretch;
+      -ms-align-items: stretch;
+      -o-align-items: stretch;
+      align-items: stretch;
+      -ms-flex-align: stretch;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      -webkit-box-pack: start;
+      -moz-box-pack: start;
+      box-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      -ms-justify-content: flex-start;
+      -o-justify-content: flex-start;
+      justify-content: flex-start;
+      -ms-flex-pack: start; }
+      @media (min-width: 1200px) {
+        .picture-wrap .bottom-bar ul.sharing {
+          width: 35%; } }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .picture-wrap .bottom-bar ul.sharing {
+          width: 35%; } }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .picture-wrap .bottom-bar ul.sharing {
+          width: 35%; } }
+      @media (max-width: 767px) and (min-width: 641px) {
+        .picture-wrap .bottom-bar ul.sharing {
+          width: 100%; } }
+      @media (max-width: 640px) and (min-width: 481px) {
+        .picture-wrap .bottom-bar ul.sharing {
+          width: 100%; } }
+      @media (max-width: 480px) {
+        .picture-wrap .bottom-bar ul.sharing {
+          width: 100%; } }
+      .picture-wrap .bottom-bar ul.sharing li {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        position: relative;
+        height: 100%;
+        float: left; }
+        .picture-wrap .bottom-bar ul.sharing li.facebook {
+          background-color: #3b5998; }
+          .picture-wrap .bottom-bar ul.sharing li.facebook:hover {
+            background-color: #344e86; }
+          .picture-wrap .bottom-bar ul.sharing li.facebook a {
+            color: #fff; }
+            .picture-wrap .bottom-bar ul.sharing li.facebook a i {
+              float: left;
+              font-size: 1.2em;
+              margin-right: 10px;
+              margin-top: 2px; }
+        .picture-wrap .bottom-bar ul.sharing li.messenger {
+          background-color: #0084ff; }
+          @media (min-width: 1200px) {
+            .picture-wrap .bottom-bar ul.sharing li.messenger {
+              display: none; } }
+          @media (min-width: 992px) and (max-width: 1199px) {
+            .picture-wrap .bottom-bar ul.sharing li.messenger {
+              display: none; } }
+          @media (min-width: 768px) and (max-width: 991px) {
+            .picture-wrap .bottom-bar ul.sharing li.messenger {
+              display: none; } }
+          @media (max-width: 767px) and (min-width: 641px) {
+            .picture-wrap .bottom-bar ul.sharing li.messenger {
+              display: inline; } }
+          @media (max-width: 640px) and (min-width: 481px) {
+            .picture-wrap .bottom-bar ul.sharing li.messenger {
+              display: inline; } }
+          @media (max-width: 480px) {
+            .picture-wrap .bottom-bar ul.sharing li.messenger {
+              display: inline; } }
+          .picture-wrap .bottom-bar ul.sharing li.messenger:hover {
+            background-color: #0077e6; }
+          .picture-wrap .bottom-bar ul.sharing li.messenger .fb-send {
+            position: absolute;
+            height: 100% !important;
+            width: 100% !important;
+            left: 0 !important;
+            top: 0 !important;
+            z-index: 500; }
+          .picture-wrap .bottom-bar ul.sharing li.messenger a {
+            color: #fff; }
+            .picture-wrap .bottom-bar ul.sharing li.messenger a .inside {
+              width: 145px; }
+              .picture-wrap .bottom-bar ul.sharing li.messenger a .inside img {
+                width: 15px;
+                height: 15px;
+                float: left;
+                margin-right: 10px;
+                margin-top: 2px; }
+        .picture-wrap .bottom-bar ul.sharing li a {
+          float: left;
+          width: 100%;
+          height: 40px;
+          float: left;
+          position: relative; }
+          .picture-wrap .bottom-bar ul.sharing li a .inside {
+            position: absolute;
+            width: 140px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+            .picture-wrap .bottom-bar ul.sharing li a .inside p {
+              float: left;
+              font-size: 0.9em;
+              font-weight: 700;
+              margin-top: 2px; }
   .picture-wrap .picture {
     width: 100%;
     float: left;
@@ -975,6 +1222,31 @@ body {
     @media (max-width: 767px) and (min-width: 641px) {
       .picture-wrap .picture {
         height: calc(100% - 40px); } }
+    .picture-wrap .picture .show-picture {
+      position: absolute;
+      height: calc(100% - 40px);
+      width: 100%;
+      top: calc(50% - 0px);
+      left: 50%;
+      -webkit-transform: translate(-50%, calc(-50% - 20px));
+      -moz-transform: translate(-50%, calc(-50% - 20px));
+      -ms-transform: translate(-50%, calc(-50% - 20px));
+      -o-transform: translate(-50%, calc(-50% - 20px));
+      transform: translate(-50%, calc(-50% - 20px));
+      -webkit-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat; }
+      @media (max-width: 767px) and (min-width: 641px) {
+        .picture-wrap .picture .show-picture {
+          top: calc(50% + 10px); } }
+      @media (max-width: 640px) and (min-width: 481px) {
+        .picture-wrap .picture .show-picture {
+          top: calc(50% + 10px); } }
+      @media (max-width: 480px) {
+        .picture-wrap .picture .show-picture {
+          top: calc(50% + 10px); } }
     .picture-wrap .picture .empty {
       position: absolute;
       top: 50%;
@@ -1012,146 +1284,6 @@ body {
         @media (max-width: 480px) {
           .picture-wrap .picture .empty h4 {
             font-size: 1.5em; } }
-    .picture-wrap .picture .show-picture {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: calc(50% + 0px);
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      -webkit-background-size: contain;
-      -o-background-size: contain;
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat; }
-      @media (max-width: 767px) and (min-width: 641px) {
-        .picture-wrap .picture .show-picture {
-          top: calc(50% + 10px); } }
-      @media (max-width: 640px) and (min-width: 481px) {
-        .picture-wrap .picture .show-picture {
-          top: calc(50% + 10px); } }
-      @media (max-width: 480px) {
-        .picture-wrap .picture .show-picture {
-          top: calc(50% + 10px); } }
-      .picture-wrap .picture .show-picture .share-bar {
-        position: fixed;
-        width: 100%;
-        height: 40px;
-        bottom: 0;
-        left: 0;
-        background-color: #fff;
-        z-index: 10;
-        box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.05); }
-        .picture-wrap .picture .show-picture .share-bar ul {
-          position: relative;
-          height: 100%;
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          -webkit-box-align: stretch;
-          -moz-box-align: stretch;
-          box-align: stretch;
-          -webkit-align-items: stretch;
-          -moz-align-items: stretch;
-          -ms-align-items: stretch;
-          -o-align-items: stretch;
-          align-items: stretch;
-          -ms-flex-align: stretch;
-          display: -webkit-box;
-          display: -moz-box;
-          display: box;
-          display: -webkit-flex;
-          display: -moz-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-orient: horizontal;
-          -moz-box-orient: horizontal;
-          box-orient: horizontal;
-          -webkit-box-direction: normal;
-          -moz-box-direction: normal;
-          box-direction: normal;
-          -webkit-flex-direction: row;
-          -moz-flex-direction: row;
-          flex-direction: row;
-          -ms-flex-direction: row;
-          -webkit-box-pack: start;
-          -moz-box-pack: start;
-          box-pack: start;
-          -webkit-justify-content: flex-start;
-          -moz-justify-content: flex-start;
-          -ms-justify-content: flex-start;
-          -o-justify-content: flex-start;
-          justify-content: flex-start;
-          -ms-flex-pack: start; }
-          .picture-wrap .picture .show-picture .share-bar ul li {
-            -webkit-box-flex: 1;
-            -moz-box-flex: 1;
-            box-flex: 1;
-            -webkit-flex: 1;
-            -moz-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            position: relative;
-            height: 100%;
-            float: left; }
-            .picture-wrap .picture .show-picture .share-bar ul li.facebook {
-              background-color: #3b5998; }
-              .picture-wrap .picture .show-picture .share-bar ul li.facebook:hover {
-                background-color: #344e86; }
-              .picture-wrap .picture .show-picture .share-bar ul li.facebook a {
-                color: #fff; }
-                .picture-wrap .picture .show-picture .share-bar ul li.facebook a i {
-                  float: left;
-                  font-size: 1.2em;
-                  margin-right: 10px;
-                  margin-top: 2px; }
-            .picture-wrap .picture .show-picture .share-bar ul li.messenger {
-              background-color: #0084ff; }
-              .picture-wrap .picture .show-picture .share-bar ul li.messenger:hover {
-                background-color: #0077e6; }
-              .picture-wrap .picture .show-picture .share-bar ul li.messenger .fb-send {
-                position: absolute;
-                height: 100% !important;
-                width: 100% !important;
-                left: 0 !important;
-                top: 0 !important;
-                z-index: 500; }
-              .picture-wrap .picture .show-picture .share-bar ul li.messenger a {
-                color: #fff; }
-                .picture-wrap .picture .show-picture .share-bar ul li.messenger a .inside {
-                  width: 145px; }
-                  .picture-wrap .picture .show-picture .share-bar ul li.messenger a .inside img {
-                    width: 15px;
-                    height: 15px;
-                    float: left;
-                    margin-right: 10px;
-                    margin-top: 2px; }
-            .picture-wrap .picture .show-picture .share-bar ul li a {
-              float: left;
-              width: 100%;
-              height: 40px;
-              float: left;
-              position: relative; }
-              .picture-wrap .picture .show-picture .share-bar ul li a .inside {
-                position: absolute;
-                width: 140px;
-                height: 20px;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                -o-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%); }
-                .picture-wrap .picture .show-picture .share-bar ul li a .inside p {
-                  float: left;
-                  font-size: 0.9em;
-                  font-weight: 700;
-                  margin-top: 2px; }
   .picture-wrap .control {
     position: absolute;
     top: 0;

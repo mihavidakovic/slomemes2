@@ -20,6 +20,9 @@ class Post extends Model
     {
         return $this->hasOne('App\Glas');
     }
+    public function user() {
+        return $this->hasOne('App\User', 'id', 'user_id');
+    }
 
 
 }

@@ -9,7 +9,7 @@
 		height: 70vh
 	+breakpoint(xxxs)
 		height: 60vh
-				
+			
 	.title
 		position: absolute
 		top: 0
@@ -114,6 +114,160 @@
 				display: block 
 		.hide-comments
 			display: none
+	.bottom-bar
+		position: absolute
+		width: 100%
+		height: 40px
+		bottom: 0
+		left: 0
+		background-color: #fff
+		z-index: 50
+		box-shadow: 0 -5px 10px 0 rgba(#000, 0.1)
+		.infos
+			width: 40%
+			height: 100%
+			position: relative
+			float: left
+			+breakpoint(xl)
+				display: inline
+			+breakpoint(lg)
+				display: inline
+			+breakpoint(md)
+				display: inline
+			+breakpoint(sm)
+				display: inline
+			+breakpoint(xs)
+				display: none
+			+breakpoint(xxs)
+				display: none
+			+breakpoint(xxxs)
+				display: none
+			ul.quick-info
+				width: 100%
+				height: 100%
+				position: relative
+				float: left
+				padding: 0
+				margin: 0
+				list-style: none
+				+align-items(stretch)
+				+display(flex)
+				+flex-direction(row)
+				+justify-content(flex-start)
+				li
+					+flex(1)
+					position: relative
+					height: 100%
+					float: left
+					p
+						margin: 0
+						padding: 0
+						position: absolute
+						width: 100%
+						top: 50%
+						left: 50%
+						text-align: center
+						+transform(translate(-50%, -50%))
+						font-size: 0.9em
+						color: rgba(#000, 0.5)  
+						i
+							font-size: 1em
+							margin-right: 5px
+						 
+		ul.sharing
+			float: right
+			position: relative
+			height: 100%
+			padding: 0
+			margin: 0
+			list-style: none
+			+align-items(stretch)
+			+display(flex)
+			+flex-direction(row)
+			+justify-content(flex-start)
+			+breakpoint(xl)
+				width: 35%
+			+breakpoint(lg)
+				width: 35%
+			+breakpoint(md)
+				width: 35%
+			+breakpoint(sm)
+				width: 35%
+			+breakpoint(xs)
+				width: 100%
+			+breakpoint(xxs)
+				width: 100%
+			+breakpoint(xxxs)
+				width: 100%
+			li
+				+flex(1)
+				position: relative
+				height: 100%
+				float: left
+				&.facebook
+					background-color: #3b5998 
+					&:hover
+						background-color: darken(#3b5998, 5%) 
+					a
+						color: #fff
+						i
+							float: left
+							font-size: 1.2em
+							margin-right: 10px
+							margin-top: 2px 
+				&.messenger
+					background-color: #0084ff
+					+breakpoint(xl)
+						display: none
+					+breakpoint(lg)
+						display: none
+					+breakpoint(md)
+						display: none
+					+breakpoint(sm)
+						display: none
+					+breakpoint(xs)
+						display: inline
+					+breakpoint(xxs)
+						display: inline
+					+breakpoint(xxxs)
+						display: inline
+					&:hover
+						background-color: darken(#0084ff, 5%) 
+					.fb-send
+						position: absolute
+						height: 100% !important
+						width: 100% !important
+						left: 0 !important
+						top: 0 !important
+						z-index: 500
+					a
+						color: #fff  
+						.inside
+							width: 145px
+							img
+								width: 15px
+								height: 15px
+								float: left
+								margin-right: 10px
+								margin-top: 2px
+				a
+					float: left
+					width: 100%
+					height: 40px
+					float: left
+					position: relative
+					.inside
+						position: absolute
+						width: 140px
+						height: 20px
+						top: 50%
+						left: 50%
+						+transform(translate(-50%, -50%))
+						p
+							float: left
+							font-size: 0.9em
+							font-weight: 700
+							margin-top: 2px  
 	.picture
 		width: 100%
 		float: left
@@ -126,7 +280,25 @@
 		border-radius: 3px
 		z-index: 10
 		+breakpoint(xs)
-			height: calc(100% - 40px) 
+			height: calc(100% - 40px)
+		.show-picture
+			position: absolute
+			height: calc(100% - 40px)
+			width: 100%
+			top: calc(50% - 0px)
+			left: 50%
+			+transform(translate(-50%, calc(-50% - 20px)))
+			-webkit-background-size: contain 
+			-o-background-size: contain 
+			background-size: contain 
+			background-position: center center
+			background-repeat: no-repeat 
+			+breakpoint(xs)
+				top: calc(50% + 10px)
+			+breakpoint(xxs)
+				top: calc(50% + 10px)
+			+breakpoint(xxxs)
+				top: calc(50% + 10px)		
 		.empty
 			position: absolute
 			top: 50%
@@ -154,98 +326,6 @@
 					font-size: 1.5em 
 				+breakpoint(xxxs)
 					font-size: 1.5em 
-		.show-picture
-			position: absolute
-			height: 100%
-			width: 100%
-			top: calc(50% + 0px)
-			left: 50%
-			+transform(translate(-50%, -50%))
-			-webkit-background-size: contain 
-			-o-background-size: contain 
-			background-size: contain 
-			background-position: center center
-			background-repeat: no-repeat 
-			+breakpoint(xs)
-				top: calc(50% + 10px)
-			+breakpoint(xxs)
-				top: calc(50% + 10px)
-			+breakpoint(xxxs)
-				top: calc(50% + 10px)
-			.share-bar
-				position: fixed
-				width: 100%
-				height: 40px
-				bottom: 0
-				left: 0
-				background-color: #fff
-				z-index: 10
-				box-shadow: 0 -5px 10px 0 rgba(#000, 0.05)
-				ul
-					position: relative
-					height: 100%
-					padding: 0
-					margin: 0
-					list-style: none
-					+align-items(stretch)
-					+display(flex)
-					+flex-direction(row)
-					+justify-content(flex-start)
-					li
-						+flex(1)
-						position: relative
-						height: 100%
-						float: left
-						&.facebook
-							background-color: #3b5998 
-							&:hover
-								background-color: darken(#3b5998, 5%) 
-							a
-								color: #fff
-								i
-									float: left
-									font-size: 1.2em
-									margin-right: 10px
-									margin-top: 2px 
-						&.messenger
-							background-color: #0084ff
-							&:hover
-								background-color: darken(#0084ff, 5%) 
-							.fb-send
-								position: absolute
-								height: 100% !important
-								width: 100% !important
-								left: 0 !important
-								top: 0 !important
-								z-index: 500
-							a
-								color: #fff  
-								.inside
-									width: 145px
-									img
-										width: 15px
-										height: 15px
-										float: left
-										margin-right: 10px
-										margin-top: 2px
-						a
-							float: left
-							width: 100%
-							height: 40px
-							float: left
-							position: relative
-							.inside
-								position: absolute
-								width: 140px
-								height: 20px
-								top: 50%
-								left: 50%
-								+transform(translate(-50%, -50%))
-								p
-									float: left
-									font-size: 0.9em
-									font-weight: 700
-									margin-top: 2px  
 
 
 	.control

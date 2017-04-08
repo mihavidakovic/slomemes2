@@ -771,13 +771,13 @@ body {
   transition: 200ms width ease-in-out; }
   @media (max-width: 767px) and (min-width: 641px) {
     .picture-wrap {
-      height: 70vh; } }
+      height: 90vh; } }
   @media (max-width: 640px) and (min-width: 481px) {
     .picture-wrap {
-      height: 70vh; } }
+      height: 90vh; } }
   @media (max-width: 480px) {
     .picture-wrap {
-      height: 60vh; } }
+      height: 90vh; } }
   .picture-wrap .title {
     position: absolute;
     top: 0;

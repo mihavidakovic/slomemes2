@@ -18,10 +18,10 @@
      </li>
     @endforeach
   @if($post)
-  @else
-    @if(!$comments)
+    @if($comments->isEmpty())
       <p class="no-comments">Trenutno še ni komentarjev. Bodi prvi!</p>
     @endif
+  @else
   @endif
  </ul>
  <div class="add-comment">

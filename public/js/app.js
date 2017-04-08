@@ -10,7 +10,13 @@ $(document).ready(function(){
     	$('.main').removeClass('comments-off');
     });
     $('.sharing .messenger').click(function() {
-    	window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
+        window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
+    });
+
+    $('.comment .odgovori').click(function() {
+        var username = $(this).attr("data-username");
+        $('.add-comment .type-comment').text('@' + username + ' ');   
+        $('.add-comment .type-comment').focus();   
     });
 
     $.getJSON('/posti', function(data){
@@ -18,5 +24,7 @@ $(document).ready(function(){
             $('.test-posti').append('<li style="margin-bottom: 20px;"><p>' + data.title + '</p><img src="' + data.url + '"></li>');
         });
     });
+
+
 
 });

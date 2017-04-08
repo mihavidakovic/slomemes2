@@ -99,6 +99,13 @@ Route::get('meme/ustvari',[
 ]);
 
 
+// IZBRIŠI MEME
+Route::get('meme/{id}/delete',[
+	'as' => 'meme-delete',
+	'uses' => 'PostsController@memeDelete'
+])->where('id', '[0-9]+');
+
+
 // GLASOVANJE
 Route::get('post/{id}/upvote',[
 	'as' => 'post-upvote',

@@ -10,7 +10,7 @@
 
     <title>Slomemes</title>
     <meta property="og:url"                content="{{url()->current()}}" />
-    @if((Request::is('/')) or (Request::is('meme/*')))
+    @if((Request::is('/')) or (Request::is('meme/*')) and (!Request::is('meme/dodaj')) and (!Request::is('meme/ustvari')))
         <meta property="og:title"              content="{{$post->title}}" />
         <meta property="og:image"              content="{{$post->url}}" />
     @else

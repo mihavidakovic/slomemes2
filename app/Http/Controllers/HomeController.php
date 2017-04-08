@@ -55,9 +55,9 @@ class HomeController extends Controller
             // }
         } else {
              $posti = DB::table('posts')
-                ->select('posts.id')
                 ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
                 ->get();
+                return response()->json(['posti' => $posti]);  
             // if ($posti->isEmpty()) {
             //     $post = [];
             //     return response()->json(['post' => $post]);                     

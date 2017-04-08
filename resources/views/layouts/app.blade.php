@@ -9,13 +9,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Slomemes</title>
+    <meta property="og:url"                content="{{url()->current()}}" />
+    @if((Request::is('/')) or (Request::is('meme/*')))
+        <meta property="og:title"              content="{{$post->title}}" />
+        <meta property="og:image"              content="{{$post->url}}" />
+    @else
+        <meta property="og:title"              content="Slomemes.si" />
+    @endif
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/jquery.atwho.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 
     <!-- Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -115,6 +124,9 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/meme-generator.js') }}"></script>
     @yield('js')
+    <script src="/js/jquery.caret.js"></script>
+    <script src="/js/jquery.atwho.js"></script>
+    @include('mentions::assets')
 
 </body>
 </html>

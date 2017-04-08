@@ -51,6 +51,13 @@ class PostsController extends Controller
 		return view('ustvari');
 	}
 
+	// IZBRIŠI MEME
+	public function memeDelete($id) {
+		$m = Post::find($id);
+		$m->delete();
+		return back();
+	}
+
 	// GLASOVANJE
 	public function postUpvote($id) {
 		$post = Post::find($id);

@@ -181,7 +181,8 @@ return [
         Jenssegers\Date\DateServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Gstt\Achievements\AchievementsServiceProvider::class,
-
+        Unicodeveloper\Mention\MentionServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*

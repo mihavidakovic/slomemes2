@@ -33,6 +33,14 @@
 			+display(flex)
 			+flex-direction(row)
 			+justify-content(flex-start)
+			a
+				width: 100%
+				float: left
+				position: relative
+				height: 100%
+				position: absolute
+				cursor: pointer
+				color: #fff 
 			.edit-button, .delete-button
 				height: 100%
 				position: relative
@@ -124,17 +132,20 @@
 		z-index: 50
 		box-shadow: 0 -5px 10px 0 rgba(#000, 0.1)
 		.infos
-			width: 40%
 			height: 100%
 			position: relative
 			float: left
 			+breakpoint(xl)
+				width: 40%
 				display: inline
 			+breakpoint(lg)
+				width: 40%
 				display: inline
 			+breakpoint(md)
+				width: 40%
 				display: inline
 			+breakpoint(sm)
+				width: 40%
 				display: inline
 			+breakpoint(xs)
 				display: none
@@ -204,6 +215,7 @@
 				position: relative
 				height: 100%
 				float: left
+				cursor: pointer
 				&.facebook
 					background-color: #3b5998 
 					&:hover

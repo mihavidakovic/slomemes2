@@ -32,10 +32,10 @@ class HomeController extends Controller
         if (Auth::check()) {
             $posti = Post::whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
                 ->doesntHave('glas')
-                ->take(100)
+                ->take(20)
                 ->latest()
                 ->get();
-            return response()->json(['posti' => $posti]);  
+            return response()->json($posti);  
             // if ($posti->isEmpty()) {
             //    $post = [];
             //    $comments = [];
@@ -56,8 +56,9 @@ class HomeController extends Controller
         } else {
              $posti = DB::table('posts')
                 ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
+                ->take(20)
                 ->get();
-                return response()->json(['posti' => $posti]);  
+                return response()->json($posti);  
             // if ($posti->isEmpty()) {
             //     $post = [];
             //     return response()->json(['post' => $post]);                     

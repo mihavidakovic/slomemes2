@@ -1,44 +1,49 @@
-// $(document).ready(function() {
-// 	$('.loading').delay(1000).fadeOut();
-// });
-
-
-//Elementi
+// //Elementi
 const naslov = document.getElementsByClassName('naslov');
 const ustvarjeno = document.getElementsByClassName('ustvarjeno');
 const slika = document.getElementsByClassName('slika');
 const like = document.getElementsByClassName('like')[0];
 const downvote = document.getElementsByClassName('dislike')[0];
 
-
-function CallURL()  {
-    $.ajax({
-        url: '/posti',
-        type: "GET",
-        dataType: "jsonp",
-        async: false,
-        success: function(msg)  {
-            JsonpCallback(msg);
-        },
-        error: function()  {
-            ErrorFunction();
-        }
-    });
+function drek() {
+	console.log("drek");
 }
 
-function JsonpCallback(json)  {
-    zbirka = json;
-    console.log("zbirka");
-}
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status);
+      }
+    };
+    xhr.send();
+};
 
+var zbirka = [];
+
+getJSON('/posti',
+function(err, data) {
+  if (err != null) {
+    alert('Something went wrong: ' + err);
+  } else {
+    zbirka1 = data;
+  }
+});
+
+zbirka = zbirka1;
 
 //začetna pozicija v json zbirki, ki je naključna vrednost v našem primeru 0->20
-console.log(zbirka);
+console.log(zbirka1);
 
-var indeks = Math.floor(Math.random() * zbirka.length());
+var indeks = Math.floor(Math.random() * zbirka.length);
 
 //Začetna pozicija indeksa in prikaz slike (stvar spremembe)
-naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title;
+naslov.innerHTML = naslov.innerHTML + zbirka[1].title;
 ustvarjeno.innerHTML = ustvarjeno.innerHTML + zbirka[indeks].created_at;
 slika.src = zbirka[indeks].url;
 

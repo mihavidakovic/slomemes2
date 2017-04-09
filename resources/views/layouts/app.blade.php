@@ -42,6 +42,9 @@
       js.src = "//connect.facebook.net/sl_SI/sdk.js#xfbml=1&version=v2.8&appId=239832329821923";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="loading">
+        <div class="waves"></div>
+    </div>
     <div id="app">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -122,11 +125,11 @@
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/meme-generator.js') }}"></script>
     @yield('js')
     <script src="/js/jquery.caret.js"></script>
     <script src="/js/jquery.atwho.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     @include('mentions::assets')
 
 </body>

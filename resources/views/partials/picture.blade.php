@@ -66,7 +66,7 @@
       </div>  
     @endif
       @if($post)
-        <a href="{{ route('post-downvote', $post->id) }}">
+        <a href="#">
           <div class="control dislike">
               <i class="ion ion-thumbsdown"></i>
           </div>
@@ -88,7 +88,7 @@
           </div>
         @endif
       @if($post)
-        <a href="{{ route('post-upvote', $post->id) }}">
+        <a href="#">
           <div class="control like">
               <i class="ion ion-thumbsup"></i>
           </div>

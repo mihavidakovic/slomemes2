@@ -25,6 +25,16 @@ Route::get('/',[
 	'uses' => 'HomeController@domov'
 ]);
 
+Route::get('posti',[
+	'as' => 'posti',
+	'uses' => 'HomeController@posti'
+]);
+
+Route::get('test',[
+	'as' => 'test',
+	'uses' => 'HomeController@test'
+]);
+
 
 Route::get('login/{service}',[
 	'as' => 'login-service',
@@ -60,6 +70,16 @@ Route::get('uporabnik/{name}/disliked',[
 ]);
 
 
+// UREDI PROFIL
+Route::get('profil/uredi',[
+	'as' => 'profil-uredi',
+	'uses' => 'UserController@profilUrediGet'
+]);
+Route::post('profil/uredi',[
+	'uses' => 'UserController@profilUrediPost'
+]);
+
+
 // DODAJ MEME
 Route::get('meme/dodaj',[
 	'as' => 'meme-dodaj',
@@ -77,6 +97,13 @@ Route::get('meme/ustvari',[
 	'as' => 'meme-ustvari',
 	'uses' => 'PostsController@ustvariGet'
 ]);
+
+
+// IZBRIŠI MEME
+Route::get('meme/{id}/delete',[
+	'as' => 'meme-delete',
+	'uses' => 'PostsController@memeDelete'
+])->where('id', '[0-9]+');
 
 
 // GLASOVANJE

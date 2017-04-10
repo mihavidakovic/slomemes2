@@ -52,7 +52,7 @@
 	                	@foreach($posts as $post)
 	                		<li data-id="{{ $post->id }}" data-markdown="{{ $post->markdown }}">
 		                		<span class="chatter_posts">
-		                			@if(!Auth::guest() && (Auth::user()->id == $post->user->id))
+		                			@if((!Auth::guest() && ($post->created_at >= Carbon\Carbon::now()->subMinutes(10)) && (Auth::user()->id === $post->user_id)) or (!Auth::guest() && Auth::user()->role === 1))
 		                				<div id="delete_warning_{{ $post->id }}" class="chatter_warning_delete">
 		                					<i class="chatter-warning"></i>Ali si prepričan da želiš izbrisati objavo?
 		                					<button class="btn btn-sm btn-danger pull-right delete_response">Da</button>

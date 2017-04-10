@@ -23,6 +23,56 @@ class HomeController extends Controller
         $skupni_glasovi = $upvoti - $downvoti;
         return view('meme', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);
     }
+
+    public function test() {
+        return view('test');
+    }
+
+    public function posti() {
+        if (Auth::check()) {
+            $posti = Post::whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
+                ->doesntHave('glas')
+                ->take(100)
+                ->latest()
+                ->get();
+            return response()->json(['posti' => $posti]);  
+            // if ($posti->isEmpty()) {
+            //    $post = [];
+            //    $comments = [];
+            //    $skupni_glasovi = 0;
+            //     return response()->json(['posti' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);        
+            // } else {
+            //     $post_id = $posti[rand(0, count($posti) - 2)];
+            //     if (Glas::where('user_id', '=', Auth::user()->id)->exists() && Glas::where('post_id', '=', $post_id->id)->exists()) {
+            //     } else {
+            //         $post = Post::find($post_id->id);
+            //         $comments = Comment::where('post_id', '=', $post->id)->get();
+            //         $upvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 1)->count();
+            //         $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
+            //         $skupni_glasovi = $upvoti - $downvoti;
+            //         return response()->json(['posti' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);        
+            //     }
+            // }
+        } else {
+             $posti = DB::table('posts')
+                ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
+                ->get();
+                return response()->json(['posti' => $posti]);  
+            // if ($posti->isEmpty()) {
+            //     $post = [];
+            //     return response()->json(['post' => $post]);                     
+            // } else {
+            //     $post_id = $posti[rand(0, count($posti) - 1)];
+            //     $post = Post::find($post_id->id);
+            //     $comments = Comment::where('post_id', '=', $post->id)->get();
+            //     $upvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 1)->count();
+            //     $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
+            //     $skupni_glasovi = $upvoti - $downvoti;
+            //     return response()->json(['posti' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);        
+       
+            // }
+        }
+    }
     public function domov()
     {
         if (Auth::check()) {
@@ -31,15 +81,22 @@ class HomeController extends Controller
                 ->take(100)
                 ->latest()
                 ->get();
-            $post_id = $posti[rand(0, count($posti) - 2)];
-            if (Glas::where('user_id', '=', Auth::user()->id)->exists() && Glas::where('post_id', '=', $post_id->id)->exists()) {
+            if ($posti->isEmpty()) {
+               $post = [];
+               $comments = [];
+               $skupni_glasovi = 0;
+               return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);    
             } else {
-                $post = Post::find($post_id->id);
-                $comments = Comment::where('post_id', '=', $post->id)->get();
-                $upvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 1)->count();
-                $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
-                $skupni_glasovi = $upvoti - $downvoti;
-                return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);        
+                $post_id = $posti[rand(0, count($posti) - 2)];
+                if (Glas::where('user_id', '=', Auth::user()->id)->exists() && Glas::where('post_id', '=', $post_id->id)->exists()) {
+                } else {
+                    $post = Post::find($post_id->id);
+                    $comments = Comment::where('post_id', '=', $post->id)->get();
+                    $upvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 1)->count();
+                    $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
+                    $skupni_glasovi = $upvoti - $downvoti;
+                    return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);        
+                }
             }
         } else {
              $posti = DB::table('posts')

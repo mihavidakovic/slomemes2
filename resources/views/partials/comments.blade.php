@@ -7,16 +7,6 @@
   <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye"></i></div>
 </div>
 <ul class="comments">
-  @foreach($comments as $comment)
-     <li class="comment">
-         <div class="top">
-             <p><a href="{{route('profil', $comment->user->name)}}">{{$comment->user->name}}</a> <small class="odgovori" data-username="{{$comment->user->name}}"><a href="#">Odgovori</a></small> <small>{{Jenssegers\Date\Date::parse($comment->created_at)->diffForHumans()}}</small></p>
-         </div>
-         <div class="content">
-             <p>{{$comment->content}}</p>
-         </div>
-     </li>
-    @endforeach
   @if($post)
     @if($comments->isEmpty())
       <p class="no-comments">Trenutno še ni komentarjev. Bodi prvi!</p>

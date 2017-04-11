@@ -8,7 +8,7 @@
         @endif
       </div>
       @if($post)
-        <h2 title="{{$post->title}}" class="naslov">{{$post->title}}</h2>
+        <h2 class="naslov"></h2>
       @else
         <h2><span></span></h2>
       @endif
@@ -41,7 +41,7 @@
               <p><i class="ion ion-person"></i> {{$post->user->name}} </p>
             </li>
             <li>
-              <p><i class="ion ion-android-time"></i> <span class="ustvarjeno">{{Jenssegers\Date\Date::parse($post->created_at)->diffForHumans()}}</span></p>
+              <p><i class="ion ion-android-time"></i> <span class="ustvarjeno"></span></p>
             </li>
           </ul>
         </div>
@@ -79,7 +79,7 @@
         </a>
       @endif
         @if($post)
-        <div class="show-picture slika" style="background-image: url({{$post->url}});">
+        <div class="show-picture slika">
         </div>
         @else
           <div class="empty">

@@ -28,14 +28,19 @@ class HomeController extends Controller
         return view('test');
     }
 
-    public function posti(Request $request) {
+    public function komentarjiJSON($id, Request $request) {
+        $komentarji = Comment::where('post_id', '=', $id)->get();
+        return response()->json(['komentarji' => $komentarji])->withCallback($request->input('callback'));
+    }
+
+    public function postiJSON(Request $request) {
         if (Auth::check()) {
             $posti = Post::whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
                 ->doesntHave('glas')
                 ->take(20)
                 ->latest()
                 ->get();
-            return response()->json(['posti' => $posti])->withCallback($request->input('callback'));;  
+            return response()->json(['posti' => $posti])->withCallback($request->input('callback')); 
             // if ($posti->isEmpty()) {
             //    $post = [];
             //    $comments = [];
@@ -58,7 +63,7 @@ class HomeController extends Controller
                 ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
                 ->take(20)
                 ->get();
-            return response()->json(['posti' => $posti])->withCallback($request->input('callback'));;  
+            return response()->json(['posti' => $posti])->withCallback($request->input('callback')); 
             // if ($posti->isEmpty()) {
             //     $post = [];
             //     return response()->json(['post' => $post]);                     

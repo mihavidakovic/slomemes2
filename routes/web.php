@@ -26,8 +26,13 @@ Route::get('/',[
 ]);
 
 Route::get('posti',[
-	'as' => 'posti',
-	'uses' => 'HomeController@posti'
+	'as' => 'posti-json',
+	'uses' => 'HomeController@postiJSON'
+]);
+
+Route::get('komentarji/{id}',[
+	'as' => 'komentarji-json',
+	'uses' => 'HomeController@komentarjiJSON'
 ]);
 
 Route::get('test',[

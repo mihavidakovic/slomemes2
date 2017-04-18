@@ -9,6 +9,8 @@ function prikaz(JSONposti) {
 	const downvote = document.getElementsByClassName('dislike')[0];
 	const ul = document.getElementsByClassName('comments')[0];	
 	const commentForm = document.getElementsByClassName('commentForm')[0];	
+	const token = document.getElementsByName('_token');	
+	const loading = document.getElementsByClassName('loading')[0];	
 
 	zbirka = JSONposti;
 	prikazPostov();
@@ -38,8 +40,8 @@ function prikaz(JSONposti) {
 		naslov.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		ustvarjeno.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title; //nastavimo tekst na vrednost polja v json zbirki z trenutnim indeksom
-		ustvarjeno.innerHTML = moment(zbirka[indeks].created_at).fromNow();
-		username.innerHTML = zbirka[indeks].name;
+		ustvarjeno.innerHTML = moment(zbirka[indeks].created_at).add('2', 'hours').fromNow();
+		username.innerHTML = zbirka[indeks].user.name;
 		slika.style.backgroundImage = "url(" + zbirka[indeks].url + ")"; //nastavimo sliko
 		/*V tem kosu kode pridobimo komentarje za vsak post*/
 		commentForm.action = "/comment/" + zbirka[indeks].id + "/add"; // spremeni id meme-a on the fly
@@ -73,6 +75,10 @@ function prikaz(JSONposti) {
 
 	//Funkcija naprej se sproži ko likamo ali dislikamo post
 	function naprej() {
+		loading.className += " visible";
+		setTimeout(function() {
+			$(loading).removeClass('visible');
+		}, 500);
 		if (zbirka.length == 0) { //ko pregledamo zbirko
 			nafilajZbirko();
 		} else {

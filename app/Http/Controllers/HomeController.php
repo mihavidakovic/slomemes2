@@ -36,9 +36,11 @@ class HomeController extends Controller
     public function postiJSON(Request $request) {
         if (Auth::check()) {
             $user_id = Auth::user()->id;
-            $posti = Post::whereDoesntHave("glasovi")
-            ->where('user_id', '=', $user_id)
+            $posti = Post::with('user')
+            ->whereDoesntHave("glasovi")
             ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
+            ->orderBy('posts.created_at', 'DESC')
+            ->orderByVotes()
             ->take(20)
             ->get();
             return response()->json(['posti' => $posti])->withCallback($request->input('callback')); 
@@ -60,10 +62,12 @@ class HomeController extends Controller
             //     }
             // }
         } else {
-             $posti = DB::table('posts')
-                ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
-                ->take(20)
-                ->get();
+            $posti = Post::with('user')
+            ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
+            ->orderBy('posts.created_at', 'DESC')
+            ->orderByVotes()
+            ->take(20)
+            ->get();
             return response()->json(['posti' => $posti])->withCallback($request->input('callback')); 
             // if ($posti->isEmpty()) {
             //     $post = [];
@@ -82,47 +86,6 @@ class HomeController extends Controller
     }
     public function domov()
     {
-        if (Auth::check()) {
-            $posti = Post::whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
-                ->doesntHave('glas')
-                ->take(100)
-                ->latest()
-                ->get();
-            if ($posti->isEmpty()) {
-               $post = [];
-               $comments = [];
-               $skupni_glasovi = 0;
-               return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);    
-            } else {
-                $post_id = $posti[rand(0, count($posti) - 2)];
-                if (Glas::where('user_id', '=', Auth::user()->id)->exists() && Glas::where('post_id', '=', $post_id->id)->exists()) {
-                } else {
-                    $post = Post::find($post_id->id);
-                    $comments = Comment::where('post_id', '=', $post->id)->get();
-                    $upvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 1)->count();
-                    $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
-                    $skupni_glasovi = $upvoti - $downvoti;
-                    return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);        
-                }
-            }
-        } else {
-             $posti = DB::table('posts')
-                ->select('posts.id')
-                ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
-                ->get();
-            if ($posti->isEmpty()) {
-                $post = [];
-                return view('domov', ['post' => $post]);                     
-            } else {
-                $post_id = $posti[rand(0, count($posti) - 1)];
-                $post = Post::find($post_id->id);
-                $comments = Comment::where('post_id', '=', $post->id)->get();
-                $upvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 1)->count();
-                $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
-                $skupni_glasovi = $upvoti - $downvoti;
-                return view('domov', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);  
-       
-            }
-        }
+        return view('domov');
     }
 }

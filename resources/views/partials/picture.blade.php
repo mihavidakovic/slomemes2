@@ -1,39 +1,15 @@
 <div class="col-lg-8 col-md-8 col-sm-8 picture-wrap">
     <div class="title">
       <div class="votes">
-        @if($post)
-          <span><i class="ion-thumbsup"></i> {{$skupni_glasovi}}</span>
-        @else
           <span><i class="ion-thumbsup"></i> 0</span>
-        @endif
       </div>
-      @if($post)
-        <h2 class="naslov"></h2>
-      @else
-        <h2><span></span></h2>
-      @endif
-      @if($post)
-        @if((!Auth::guest()) and ($post->user_id == Auth::user()->id) and ($post))
-          <div class="admin-functions">
-            @if(($post->created_at >= Carbon\Carbon::now()->subMinutes(10)) or Auth::user()->role === 1)
-              <div class="edit-button">
-                <i class="ion ion-edit"></i>
-              </div>
-            @endif
-            @if(Auth::user()->role === 1)
-                <div class="delete-button">
-                  <a href="{{route('meme-delete', $post->id)}}">
-                    <i class="ion ion-ios-trash"></i>
-                  </a>
-                </div>
-            @endif
-          </div>
-        @endif
-      @endif
+        <h2 class="naslov"><span></span></h2>
       <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye-disabled"></i></div>
     </div>
-    <div class="picture" data-id="@if($post){{$post->id}}@endif">
-    @if($post)
+    <div class="picture" data-id="">
+      <div class="loading">
+          <div class="waves"></div>
+      </div>
       <div class="bottom-bar">
         <div class="infos">
           <ul class="quick-info">
@@ -47,7 +23,7 @@
         </div>
         <ul class="sharing">
           <li class="facebook">
-            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://slomemes.si/meme/{{$post->id}}">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://slomemes.si/meme/1">
               <div class="inside">
                 <i class="ion ion-social-facebook"></i>
                 <p>Deli na Facebook-u</p>
@@ -64,42 +40,22 @@
           </li>
         </ul>
       </div>  
-    @endif
-      @if($post)
-        <a href="#">
-          <div class="control dislike">
-              <i class="ion ion-thumbsdown"></i>
-          </div>
-        </a>
-      @else
-        <a href="#">
-          <div class="control dislike">
-              <i class="ion ion-thumbsdown"></i>
-          </div>
-        </a>
-      @endif
-        @if($post)
         <div class="show-picture slika">
         </div>
-        @else
-          <div class="empty">
+         <!--  <div class="empty">
             <h3>:(</h3>
             <h4>Trenutno ni na voljo noben meme</h4>
+          </div> -->
+        <a href="#">
+          <div class="control dislike">
+              <i class="ion ion-thumbsdown"></i>
           </div>
-        @endif
-      @if($post)
+        </a>
         <a href="#">
           <div class="control like">
               <i class="ion ion-thumbsup"></i>
           </div>
         </a>
-      @else
-        <a href="#">
-          <div class="control like">
-              <i class="ion ion-thumbsup"></i>
-          </div>
-        </a>
-      @endif
     </div>
     <div style="clear: both;"></div>
 </div>

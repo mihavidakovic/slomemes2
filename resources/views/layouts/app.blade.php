@@ -26,6 +26,7 @@
     @yield('js')
     <script src="/js/jquery.caret.js"></script>
     <script src="/js/jquery.atwho.js"></script>
+    <script src="{{ asset('js/moment.js') }}"></script>
     <script type="text/javascript" src="/js/index.js"></script>
     @include('mentions::assets')
     <script>

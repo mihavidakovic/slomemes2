@@ -1,3 +1,4 @@
+moment.locale('sl');
 function prikaz(JSONposti) {
 	//Elementi
 	const naslov = document.getElementsByClassName('naslov')[0];
@@ -35,7 +36,7 @@ function prikaz(JSONposti) {
 		naslov.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		ustvarjeno.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title; //nastavimo tekst na vrednost polja v json zbirki z trenutnim indeksom
-		ustvarjeno.innerHTML = "Ustvarjeno: " + zbirka[indeks].created_at + " " + zbirka[indeks].id;
+		ustvarjeno.innerHTML = moment(zbirka[indeks].created_at).add('2', 'hours').fromNow();
 		slika.style.backgroundImage = "url(" + zbirka[indeks].url + ")"; //nastavimo sliko
 		/*V tem kosu kode pridobimo komentarje za vsak post*/
 		$.ajax({

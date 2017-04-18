@@ -27,6 +27,7 @@
     <script src="/js/jquery.atwho.js"></script>
     <script src="{{ asset('js/moment.js') }}"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
     @include('mentions::assets')
     <script>
         window.Laravel = {!! json_encode([

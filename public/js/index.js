@@ -51,9 +51,10 @@ function prikaz(JSONposti) {
 			ul.innerHTML = "";
 			for (var i = 0; i < JSONkomentarji.length; i++) {
 				var li = document.createElement('li');
+				li.className= "comment";
 
 				ul.appendChild(li);
-				li.innerHTML = JSONkomentarji[i].content;
+				li.innerHTML = "<div class='top'> <p><a href='#'>username</a> <small>datum</small></p> </div> <div class='content'> <p>" + JSONkomentarji[i].content + "</p></div>";
 			}
 		}
 		zbirka.splice(indeks, 1); //iz zbirke odstranimo ogledan post

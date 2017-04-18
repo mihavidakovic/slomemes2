@@ -35,11 +35,12 @@ class HomeController extends Controller
 
     public function postiJSON(Request $request) {
         if (Auth::check()) {
-            $posti = Post::whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
-                ->doesntHave('glas')
-                ->take(20)
-                ->latest()
-                ->get();
+            $user_id = Auth::user()->id;
+            $posti = Post::whereDoesntHave("glasovi")
+            ->where('user_id', '=', $user_id)
+            ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
+            ->take(20)
+            ->get();
             return response()->json(['posti' => $posti])->withCallback($request->input('callback')); 
             // if ($posti->isEmpty()) {
             //    $post = [];

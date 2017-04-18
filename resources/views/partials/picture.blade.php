@@ -38,7 +38,7 @@
         <div class="infos">
           <ul class="quick-info">
             <li>
-              <p><i class="ion ion-person"></i> {{$post->user->name}} </p>
+              <p><i class="ion ion-person"></i> <span class="username">xy</span> </p>
             </li>
             <li>
               <p><i class="ion ion-android-time"></i> <span class="ustvarjeno"></span></p>

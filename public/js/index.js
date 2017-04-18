@@ -3,10 +3,12 @@ function prikaz(JSONposti) {
 	//Elementi
 	const naslov = document.getElementsByClassName('naslov')[0];
 	const ustvarjeno = document.getElementsByClassName('ustvarjeno')[0];
+	const username = document.getElementsByClassName('username')[0];
 	const slika = document.getElementsByClassName('slika')[0];
 	const like = document.getElementsByClassName('like')[0];
 	const downvote = document.getElementsByClassName('dislike')[0];
 	const ul = document.getElementsByClassName('comments')[0];	
+	const commentForm = document.getElementsByClassName('commentForm')[0];	
 
 	zbirka = JSONposti;
 	prikazPostov();
@@ -36,9 +38,11 @@ function prikaz(JSONposti) {
 		naslov.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		ustvarjeno.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title; //nastavimo tekst na vrednost polja v json zbirki z trenutnim indeksom
-		ustvarjeno.innerHTML = moment(zbirka[indeks].created_at).add('2', 'hours').fromNow();
+		ustvarjeno.innerHTML = moment(zbirka[indeks].created_at).fromNow();
+		username.innerHTML = zbirka[indeks].name;
 		slika.style.backgroundImage = "url(" + zbirka[indeks].url + ")"; //nastavimo sliko
 		/*V tem kosu kode pridobimo komentarje za vsak post*/
+		commentForm.action = "/comment/" + zbirka[indeks].id + "/add"; // spremeni id meme-a on the fly
 		$.ajax({
 		    type:"GET", 
 		    url: "/komentarji/" + zbirka[indeks].id, 
@@ -49,12 +53,19 @@ function prikaz(JSONposti) {
 		});	
 		function komentarji(JSONkomentarji) {
 			ul.innerHTML = "";
-			for (var i = 0; i < JSONkomentarji.length; i++) {
-				var li = document.createElement('li');
-				li.className= "comment";
+			if (JSONkomentarji.length === 0) {
+					var p = document.createElement('p');
+					p.className= "no-comments";
+					ul.appendChild(p);
+					p.innerHTML = "Trenutno še ni komentarjev. Bodi prvi!"
+			} else {
+				for (var i = 0; i < JSONkomentarji.length; i++) {
+					var li = document.createElement('li');
+					li.className= "comment";
 
-				ul.appendChild(li);
-				li.innerHTML = "<div class='top'> <p><a href='#'>username</a> <small>datum</small></p> </div> <div class='content'> <p>" + JSONkomentarji[i].content + "</p></div>";
+					ul.appendChild(li);
+					li.innerHTML = "<div class='top'> <p><a href='#'>username</a> <small>datum</small></p> </div> <div class='content'> <p>" + JSONkomentarji[i].content + "</p></div>";
+				}
 			}
 		}
 		zbirka.splice(indeks, 1); //iz zbirke odstranimo ogledan post

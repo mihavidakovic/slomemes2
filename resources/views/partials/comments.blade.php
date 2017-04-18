@@ -16,7 +16,7 @@
  </ul>
  <div class="add-comment">
   @if($post)
-   <form method="POST" action="{{route('add-comment', $post->id)}}">
+   <form method="POST" action="" class="commentForm">
     {!! mention()->asTextArea('content', old('content'), 'users', 'name', 'type-comment', 'lol') !!}
      <button type="submit" class="btn btn-default"><i class="ion ion-android-send"></i></button>
      {{ csrf_field() }}

@@ -16,9 +16,13 @@ class Post extends Model
         return $this->hasOne('App\Comment');
     }
 
-	public function glas()
+    public function glas()
     {
         return $this->hasOne('App\Glas');
+    }
+    public function glasovi()
+    {
+        return $this->hasMany('App\Glas');
     }
     public function user() {
         return $this->hasOne('App\User', 'id', 'user_id');

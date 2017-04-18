@@ -10,12 +10,6 @@
 
     <title>Slomemes</title>
     <meta property="og:url"                content="{{url()->current()}}" />
-    @if((Request::is('/')) or (Request::is('meme/*')) and (!Request::is('meme/dodaj')) and (!Request::is('meme/ustvari')))
-        <meta property="og:title"              content="{{$post->title}}" />
-        <meta property="og:image"              content="{{$post->url}}" />
-    @else
-        <meta property="og:title"              content="Slomemes.si" />
-    @endif
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -26,6 +20,14 @@
     
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/meme-generator.js') }}"></script>
+    @yield('js')
+    <script src="/js/jquery.caret.js"></script>
+    <script src="/js/jquery.atwho.js"></script>
+    <script src="{{ asset('js/moment.js') }}"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    @include('mentions::assets')
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -33,7 +35,7 @@
     </script>
     @yield('css')
 </head>
-<body>
+<body onload="pridobiPoste()">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -42,9 +44,6 @@
       js.src = "//connect.facebook.net/sl_SI/sdk.js#xfbml=1&version=v2.8&appId=239832329821923";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="loading">
-        <div class="waves"></div>
-    </div>
     <div id="app">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -122,15 +121,6 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/meme-generator.js') }}"></script>
-    @yield('js')
-    <script src="/js/jquery.caret.js"></script>
-    <script src="/js/jquery.atwho.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
-    @include('mentions::assets')
 
 </body>
 </html>

@@ -16,9 +16,20 @@ class Post extends Model
         return $this->hasOne('App\Comment');
     }
 
-	public function glas()
+    public function glas()
     {
         return $this->hasOne('App\Glas');
+    }
+    public function glasovi()
+    {
+        return $this->hasMany('App\Glas');
+    }
+    public function scopeOrderByVotes($query)
+    {
+        $query->leftJoin('glasovi', 'glasovi.post_id', '=', 'posts.id')
+            ->selectRaw('posts.*, count(glasovi.id) as aggregate')
+            ->groupBy('posts.id')
+            ->orderBy('aggregate', 'desc');
     }
     public function user() {
         return $this->hasOne('App\User', 'id', 'user_id');

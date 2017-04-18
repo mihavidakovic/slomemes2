@@ -26,8 +26,13 @@ Route::get('/',[
 ]);
 
 Route::get('posti',[
-	'as' => 'posti',
-	'uses' => 'HomeController@posti'
+	'as' => 'posti-json',
+	'uses' => 'HomeController@postiJSON'
+]);
+
+Route::get('komentarji/{id}',[
+	'as' => 'komentarji-json',
+	'uses' => 'HomeController@komentarjiJSON'
 ]);
 
 Route::get('test',[
@@ -107,12 +112,12 @@ Route::get('meme/{id}/delete',[
 
 
 // GLASOVANJE
-Route::get('post/{id}/upvote',[
+Route::post('meme/{id}/upvote',[
 	'as' => 'post-upvote',
 	'uses' => 'PostsController@postUpvote'
 ]);
 
-Route::get('post/{id}/downvote',[
+Route::post('meme/{id}/downvote',[
 	'as' => 'post-downvote',
 	'uses' => 'PostsController@postDownvote'
 ]);

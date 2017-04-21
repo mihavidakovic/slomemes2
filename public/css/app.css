@@ -133,10 +133,13 @@ body {
   100% {
     background-position: 468px 0; } }
 
+.kmalu-body {
+  background-color: #E1464B; }
+
 .kmalu {
   width: 100%;
   height: 100%;
-  position: absolue;
+  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);

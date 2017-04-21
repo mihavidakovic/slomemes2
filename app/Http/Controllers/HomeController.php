@@ -13,7 +13,11 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home() {
-        return redirect()->route('domov');
+        if (Auth::check()) {
+             return redirect()->route('domov');
+        } else {
+            return view('kmalu');
+        }
     }
     public function getMeme($id) {
         $post = Post::find($id);
@@ -22,10 +26,6 @@ class HomeController extends Controller
         $downvoti = Glas::where('post_id', '=', $post->id)->where('type', '=', 2)->count();
         $skupni_glasovi = $upvoti - $downvoti;
         return view('meme', ['post' => $post, 'comments' => $comments, 'skupni_glasovi' => $skupni_glasovi]);
-    }
-
-    public function test() {
-        return view('test');
     }
 
     public function komentarjiJSON($id, Request $request) {
@@ -86,6 +86,10 @@ class HomeController extends Controller
     }
     public function domov()
     {
-        return view('domov');
+        if (Auth::check()) {
+             return view('domov');
+        } else {
+            return view('kmalu');
+        }
     }
 }

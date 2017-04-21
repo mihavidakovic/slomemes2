@@ -16,6 +16,7 @@
 	<meta property="og:title"              content="Slomemes.si prihaja kmalu!" />
 	<meta property="og:description"        content="Kmalu pride na slovensko sceno najboljša meme spletna skupnost!" />
 	<meta property="og:image"              content="http://slomemes.si/img/logo-fb.png" />
+	<meta property="fb:app_id"              content="239832329821923" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">

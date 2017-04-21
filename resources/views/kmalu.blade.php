@@ -13,8 +13,8 @@
 
     <title>Slomemes</title>
     <meta property="og:url"                content="{{url()->current()}}" />
-	<meta property="og:title"              content="Slomemes.si prihaja kmalu!" />
-	<meta property="og:description"        content="Kmalu pride na slovensko sceno najboljša meme spletna skupnost!" />
+	<meta property="og:title"              content="Kmalu prihaja Slomemes.si!" />
+	<meta property="og:description"        content="Na slovensko sceno prihaja najboljša meme spletna skupnost. Kmalu!" />
 	<meta property="og:image"              content="http://slomemes.si/img/logo-fb.png" />
 	<meta property="fb:app_id"              content="239832329821923" />
 
@@ -57,6 +57,7 @@
     		<div class="center">
 		    	<h1><a href="#"><img src="img/logo.png"></a></h1>
 		    	<h2>Kmalu pride na slovensko sceno najboljša meme spletna skupnost!</h2>
+		    	<h3>Nekaj awesome funkcij: <span>meme ustvarjalnik</span>, <span>forum</span>, <span>dosežki</span>, ...</h3>
 		    	<ul class="sharing">
 	    		 	<li class="fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://slomemes.si');return false"><i class="ion-social-facebook ion"></i> Deli na Facebook-u</li>
 		    		<li class="msg" onclick="window.open('fb-messenger://share?link=http://slomemes.si');return false"><img src="img/messenger.svg" width="15">Pošlji kot sporočilo</li>

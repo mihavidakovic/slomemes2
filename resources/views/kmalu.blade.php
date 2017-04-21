@@ -13,6 +13,9 @@
 
     <title>Slomemes</title>
     <meta property="og:url"                content="{{url()->current()}}" />
+	<meta property="og:title"              content="Slomemes.si prihaja kmalu!" />
+	<meta property="og:description"        content="Kmalu pride na slovensko sceno najboljša meme spletna skupnost!" />
+	<meta property="og:image"              content="http://slomemes.si/img/logo-fb.png" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -51,8 +54,12 @@
     <div id="app">
     	<div class="kmalu">
     		<div class="center">
-		    	<h1><a href="#">Slomemes.si</a></h1>
+		    	<h1><a href="#"><img src="img/logo.png"></a></h1>
 		    	<h2>Kmalu pride na slovensko sceno najboljša meme spletna skupnost!</h2>
+		    	<ul class="sharing">
+	    		 	<li class="fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://slomemes.si');return false"><i class="ion-social-facebook ion"></i> Deli na Facebook-u</li>
+		    		<li class="msg" onclick="window.open('fb-messenger://share?link=http://slomemes.si');return false"><img src="img/messenger.svg" width="15">Pošlji kot sporočilo</li>
+		    	</ul>
 		    </div>
     	</div>
     </div>

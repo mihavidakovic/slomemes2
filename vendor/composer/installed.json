@@ -465,62 +465,6 @@
         "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles"
     },
     {
-        "name": "swiftmailer/swiftmailer",
-        "version": "v5.4.6",
-        "version_normalized": "5.4.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/swiftmailer/swiftmailer.git",
-            "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
-            "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9.1",
-            "symfony/phpunit-bridge": "~3.2"
-        },
-        "time": "2017-02-13T07:52:53+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "lib/swift_required.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Chris Corbyn"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Swiftmailer, free feature-rich PHP mailer",
-        "homepage": "http://swiftmailer.org",
-        "keywords": [
-            "email",
-            "mail",
-            "mailer"
-        ]
-    },
-    {
         "name": "paragonie/random_compat",
         "version": "v2.0.10",
         "version_normalized": "2.0.10.0",
@@ -983,12 +927,12 @@
         "version_normalized": "0.9.9.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/padraic/mockery.git",
+            "url": "https://github.com/mockery/mockery.git",
             "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
+            "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
             "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
             "shasum": ""
         },
@@ -2158,50 +2102,6 @@
         ]
     },
     {
-        "name": "myclabs/deep-copy",
-        "version": "1.6.0",
-        "version_normalized": "1.6.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/myclabs/DeepCopy.git",
-            "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/5a5a9fc8025a08d8919be87d6884d5a92520cefe",
-            "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "doctrine/collections": "1.*",
-            "phpunit/phpunit": "~4.1"
-        },
-        "time": "2017-01-26T22:05:40+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "DeepCopy\\": "src/DeepCopy/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "Create deep copies (clones) of your objects",
-        "homepage": "https://github.com/myclabs/DeepCopy",
-        "keywords": [
-            "clone",
-            "copy",
-            "duplicate",
-            "object",
-            "object graph"
-        ]
-    },
-    {
         "name": "league/commonmark",
         "version": "0.15.3",
         "version_normalized": "0.15.3.0",
@@ -2419,103 +2319,6 @@
             "s3",
             "sftp",
             "storage"
-        ]
-    },
-    {
-        "name": "devdojo/chatter",
-        "version": "0.2.7",
-        "version_normalized": "0.2.7.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/thedevdojo/chatter.git",
-            "reference": "ca1b4d6e76dacbd77867d046f9bdcca0b6a75f61"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/thedevdojo/chatter/zipball/ca1b4d6e76dacbd77867d046f9bdcca0b6a75f61",
-            "reference": "ca1b4d6e76dacbd77867d046f9bdcca0b6a75f61",
-            "shasum": ""
-        },
-        "require-dev": {
-            "illuminate/cache": "~5.1.20|5.2.*|5.3.*",
-            "illuminate/console": "~5.1.20|5.2.*|5.3.*",
-            "mockery/mockery": "^0.9.5",
-            "phpunit/phpunit": "~5.7.14"
-        },
-        "time": "2017-03-12T21:13:57+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "DevDojo\\Chatter\\": "/src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "authors": [
-            {
-                "name": "Tony Lea",
-                "email": "tony@devdojo.com"
-            }
-        ],
-        "description": "A simple forum package for your laravel app"
-    },
-    {
-        "name": "jenssegers/date",
-        "version": "v3.2.9",
-        "version_normalized": "3.2.9.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jenssegers/date.git",
-            "reference": "0b31adfc17a359e34ceff20964a9047bca7ea7d9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jenssegers/date/zipball/0b31adfc17a359e34ceff20964a9047bca7ea7d9",
-            "reference": "0b31adfc17a359e34ceff20964a9047bca7ea7d9",
-            "shasum": ""
-        },
-        "require": {
-            "nesbot/carbon": "^1.0",
-            "php": ">=5.4",
-            "symfony/translation": "^2.7|^3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^4.0|^5.0|^6.0",
-            "satooshi/php-coveralls": "^1.0"
-        },
-        "time": "2017-03-12T09:26:50+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Jenssegers\\Date\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jens Segers",
-                "homepage": "https://jenssegers.com"
-            }
-        ],
-        "description": "A date library to help you work with dates in different languages",
-        "homepage": "https://github.com/jenssegers/date",
-        "keywords": [
-            "carbon",
-            "date",
-            "datetime",
-            "i18n",
-            "laravel",
-            "time",
-            "translation"
         ]
     },
     {
@@ -2866,62 +2669,6 @@
         "description": "Achievements for Laravel 5.3+"
     },
     {
-        "name": "laravel/socialite",
-        "version": "v3.0.4",
-        "version_normalized": "3.0.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/laravel/socialite.git",
-            "reference": "441e0d467319044e4913b1748382d427795416e9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/laravel/socialite/zipball/441e0d467319044e4913b1748382d427795416e9",
-            "reference": "441e0d467319044e4913b1748382d427795416e9",
-            "shasum": ""
-        },
-        "require": {
-            "guzzlehttp/guzzle": "~6.0",
-            "illuminate/contracts": "~5.4",
-            "illuminate/http": "~5.4",
-            "illuminate/support": "~5.4",
-            "league/oauth1-client": "~1.0",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9",
-            "phpunit/phpunit": "~4.0|~5.0"
-        },
-        "time": "2017-03-27T19:43:19+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Laravel\\Socialite\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            }
-        ],
-        "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
-        "keywords": [
-            "laravel",
-            "oauth"
-        ]
-    },
-    {
         "name": "ramsey/uuid",
         "version": "3.6.1",
         "version_normalized": "3.6.1.0",
@@ -3047,137 +2794,6 @@
         "keywords": [
             "markdown",
             "parser"
-        ]
-    },
-    {
-        "name": "laravel/framework",
-        "version": "v5.4.17",
-        "version_normalized": "5.4.17.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/laravel/framework.git",
-            "reference": "f7675d59e3863a58ecdff1a5ee1dcd0cff788f4b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/f7675d59e3863a58ecdff1a5ee1dcd0cff788f4b",
-            "reference": "f7675d59e3863a58ecdff1a5ee1dcd0cff788f4b",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/inflector": "~1.0",
-            "erusev/parsedown": "~1.6",
-            "ext-mbstring": "*",
-            "ext-openssl": "*",
-            "league/flysystem": "~1.0",
-            "monolog/monolog": "~1.11",
-            "mtdowling/cron-expression": "~1.0",
-            "nesbot/carbon": "~1.20",
-            "paragonie/random_compat": "~1.4|~2.0",
-            "php": ">=5.6.4",
-            "ramsey/uuid": "~3.0",
-            "swiftmailer/swiftmailer": "~5.4",
-            "symfony/console": "~3.2",
-            "symfony/debug": "~3.2",
-            "symfony/finder": "~3.2",
-            "symfony/http-foundation": "~3.2",
-            "symfony/http-kernel": "~3.2",
-            "symfony/process": "~3.2",
-            "symfony/routing": "~3.2",
-            "symfony/var-dumper": "~3.2",
-            "tijsverkoyen/css-to-inline-styles": "~2.2",
-            "vlucas/phpdotenv": "~2.2"
-        },
-        "replace": {
-            "illuminate/auth": "self.version",
-            "illuminate/broadcasting": "self.version",
-            "illuminate/bus": "self.version",
-            "illuminate/cache": "self.version",
-            "illuminate/config": "self.version",
-            "illuminate/console": "self.version",
-            "illuminate/container": "self.version",
-            "illuminate/contracts": "self.version",
-            "illuminate/cookie": "self.version",
-            "illuminate/database": "self.version",
-            "illuminate/encryption": "self.version",
-            "illuminate/events": "self.version",
-            "illuminate/exception": "self.version",
-            "illuminate/filesystem": "self.version",
-            "illuminate/hashing": "self.version",
-            "illuminate/http": "self.version",
-            "illuminate/log": "self.version",
-            "illuminate/mail": "self.version",
-            "illuminate/notifications": "self.version",
-            "illuminate/pagination": "self.version",
-            "illuminate/pipeline": "self.version",
-            "illuminate/queue": "self.version",
-            "illuminate/redis": "self.version",
-            "illuminate/routing": "self.version",
-            "illuminate/session": "self.version",
-            "illuminate/support": "self.version",
-            "illuminate/translation": "self.version",
-            "illuminate/validation": "self.version",
-            "illuminate/view": "self.version",
-            "tightenco/collect": "self.version"
-        },
-        "require-dev": {
-            "aws/aws-sdk-php": "~3.0",
-            "doctrine/dbal": "~2.5",
-            "mockery/mockery": "~0.9.4",
-            "pda/pheanstalk": "~3.0",
-            "phpunit/phpunit": "~5.7",
-            "predis/predis": "~1.0",
-            "symfony/css-selector": "~3.2",
-            "symfony/dom-crawler": "~3.2"
-        },
-        "suggest": {
-            "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
-            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.5).",
-            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-            "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
-            "laravel/tinker": "Required to use the tinker console command (~1.0).",
-            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
-            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
-            "nexmo/client": "Required to use the Nexmo transport (~1.0).",
-            "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
-            "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
-            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
-            "symfony/css-selector": "Required to use some of the crawler integration testing tools (~3.2).",
-            "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.2).",
-            "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
-        },
-        "time": "2017-04-03T13:07:39+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/Illuminate/Foundation/helpers.php",
-                "src/Illuminate/Support/helpers.php"
-            ],
-            "psr-4": {
-                "Illuminate\\": "src/Illuminate/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Laravel Framework.",
-        "homepage": "https://laravel.com",
-        "keywords": [
-            "framework",
-            "laravel"
         ]
     },
     {
@@ -4196,5 +3812,558 @@
         ],
         "description": "Symfony CssSelector Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "ezyang/htmlpurifier",
+        "version": "v4.8.0",
+        "version_normalized": "4.8.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ezyang/htmlpurifier.git",
+            "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2",
+            "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2016-07-16T12:58:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "HTMLPurifier": "library/"
+            },
+            "files": [
+                "library/HTMLPurifier.composer.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Edward Z. Yang",
+                "email": "admin@htmlpurifier.org",
+                "homepage": "http://ezyang.com"
+            }
+        ],
+        "description": "Standards compliant HTML filter written in PHP",
+        "homepage": "http://htmlpurifier.org/",
+        "keywords": [
+            "html"
+        ]
+    },
+    {
+        "name": "swiftmailer/swiftmailer",
+        "version": "v5.4.7",
+        "version_normalized": "5.4.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+            "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.1",
+            "symfony/phpunit-bridge": "~3.2"
+        },
+        "time": "2017-04-20T17:32:18+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/swift_required.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Chris Corbyn"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "http://swiftmailer.org",
+        "keywords": [
+            "email",
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "laravel/framework",
+        "version": "v5.4.19",
+        "version_normalized": "5.4.19.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/framework.git",
+            "reference": "02444b7450350db17a7607c8a52f7268ebdb0dad"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/02444b7450350db17a7607c8a52f7268ebdb0dad",
+            "reference": "02444b7450350db17a7607c8a52f7268ebdb0dad",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.0",
+            "erusev/parsedown": "~1.6",
+            "ext-mbstring": "*",
+            "ext-openssl": "*",
+            "league/flysystem": "~1.0",
+            "monolog/monolog": "~1.11",
+            "mtdowling/cron-expression": "~1.0",
+            "nesbot/carbon": "~1.20",
+            "paragonie/random_compat": "~1.4|~2.0",
+            "php": ">=5.6.4",
+            "ramsey/uuid": "~3.0",
+            "swiftmailer/swiftmailer": "~5.4",
+            "symfony/console": "~3.2",
+            "symfony/debug": "~3.2",
+            "symfony/finder": "~3.2",
+            "symfony/http-foundation": "~3.2",
+            "symfony/http-kernel": "~3.2",
+            "symfony/process": "~3.2",
+            "symfony/routing": "~3.2",
+            "symfony/var-dumper": "~3.2",
+            "tijsverkoyen/css-to-inline-styles": "~2.2",
+            "vlucas/phpdotenv": "~2.2"
+        },
+        "replace": {
+            "illuminate/auth": "self.version",
+            "illuminate/broadcasting": "self.version",
+            "illuminate/bus": "self.version",
+            "illuminate/cache": "self.version",
+            "illuminate/config": "self.version",
+            "illuminate/console": "self.version",
+            "illuminate/container": "self.version",
+            "illuminate/contracts": "self.version",
+            "illuminate/cookie": "self.version",
+            "illuminate/database": "self.version",
+            "illuminate/encryption": "self.version",
+            "illuminate/events": "self.version",
+            "illuminate/exception": "self.version",
+            "illuminate/filesystem": "self.version",
+            "illuminate/hashing": "self.version",
+            "illuminate/http": "self.version",
+            "illuminate/log": "self.version",
+            "illuminate/mail": "self.version",
+            "illuminate/notifications": "self.version",
+            "illuminate/pagination": "self.version",
+            "illuminate/pipeline": "self.version",
+            "illuminate/queue": "self.version",
+            "illuminate/redis": "self.version",
+            "illuminate/routing": "self.version",
+            "illuminate/session": "self.version",
+            "illuminate/support": "self.version",
+            "illuminate/translation": "self.version",
+            "illuminate/validation": "self.version",
+            "illuminate/view": "self.version",
+            "tightenco/collect": "self.version"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "~3.0",
+            "doctrine/dbal": "~2.5",
+            "mockery/mockery": "~0.9.4",
+            "pda/pheanstalk": "~3.0",
+            "phpunit/phpunit": "~5.7",
+            "predis/predis": "~1.0",
+            "symfony/css-selector": "~3.2",
+            "symfony/dom-crawler": "~3.2"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
+            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.5).",
+            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+            "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
+            "laravel/tinker": "Required to use the tinker console command (~1.0).",
+            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
+            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
+            "nexmo/client": "Required to use the Nexmo transport (~1.0).",
+            "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
+            "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
+            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
+            "symfony/css-selector": "Required to use some of the crawler integration testing tools (~3.2).",
+            "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.2).",
+            "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
+        },
+        "time": "2017-04-16T13:33:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/Illuminate/Foundation/helpers.php",
+                "src/Illuminate/Support/helpers.php"
+            ],
+            "psr-4": {
+                "Illuminate\\": "src/Illuminate/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Laravel Framework.",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "framework",
+            "laravel"
+        ]
+    },
+    {
+        "name": "luketowers/purifier",
+        "version": "3.0.2",
+        "version_normalized": "3.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LukeTowers/Purifier.git",
+            "reference": "22ff4948cf382d655848b5262d5daa886dc9bdc4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LukeTowers/Purifier/zipball/22ff4948cf382d655848b5262d5daa886dc9bdc4",
+            "reference": "22ff4948cf382d655848b5262d5daa886dc9bdc4",
+            "shasum": ""
+        },
+        "require": {
+            "ezyang/htmlpurifier": "4.8.*",
+            "illuminate/config": "5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/filesystem": "5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "graham-campbell/testbench": "^3.2",
+            "mockery/mockery": "0.9.*",
+            "phpunit/phpunit": "^4.8|^5.0",
+            "scrutinizer/ocular": "^1.3"
+        },
+        "suggest": {
+            "laravel/framework": "To test the Laravel bindings",
+            "laravel/lumen-framework": "To test the Lumen bindings"
+        },
+        "time": "2017-02-10T02:06:08+00:00",
+        "type": "package",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "LukeTowers\\Purifier\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Muharrem ERİN",
+                "email": "me@mewebstudio.com",
+                "homepage": "https://github.com/mewebstudio",
+                "role": "Original Author"
+            },
+            {
+                "name": "Luke Towers",
+                "email": "laravel.purifier@luketowers.cs",
+                "homepage": "https://luketowers.ca/",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Laravel 5 HtmlPurifier Package",
+        "homepage": "https://github.com/LukeTowers/Purifier",
+        "keywords": [
+            "Purifier",
+            "htmlpurifier",
+            "laravel5 HtmlPurifier",
+            "laravel5 Purifier",
+            "laravel5 Security",
+            "security",
+            "xss"
+        ]
+    },
+    {
+        "name": "devdojo/chatter",
+        "version": "0.2.8",
+        "version_normalized": "0.2.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thedevdojo/chatter.git",
+            "reference": "a2520b2395d5e994ecd6c24b3a5d5564f411aa0e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thedevdojo/chatter/zipball/a2520b2395d5e994ecd6c24b3a5d5564f411aa0e",
+            "reference": "a2520b2395d5e994ecd6c24b3a5d5564f411aa0e",
+            "shasum": ""
+        },
+        "require": {
+            "luketowers/purifier": "~3.0"
+        },
+        "require-dev": {
+            "illuminate/cache": "~5.1.20|5.2.*|5.3.*",
+            "illuminate/console": "~5.1.20|5.2.*|5.3.*",
+            "mockery/mockery": "^0.9.5",
+            "phpunit/phpunit": "~5.7.14"
+        },
+        "time": "2017-04-13T07:14:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DevDojo\\Chatter\\": "/src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Tony Lea",
+                "email": "tony@devdojo.com"
+            }
+        ],
+        "description": "A simple forum package for your laravel app"
+    },
+    {
+        "name": "jenssegers/date",
+        "version": "v3.2.10",
+        "version_normalized": "3.2.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jenssegers/date.git",
+            "reference": "ddc073e6cbba95bf298bf2bf43f2ebb2ec47b050"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jenssegers/date/zipball/ddc073e6cbba95bf298bf2bf43f2ebb2ec47b050",
+            "reference": "ddc073e6cbba95bf298bf2bf43f2ebb2ec47b050",
+            "shasum": ""
+        },
+        "require": {
+            "nesbot/carbon": "^1.0",
+            "php": ">=5.4",
+            "symfony/translation": "^2.7|^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0|^6.0",
+            "satooshi/php-coveralls": "^1.0"
+        },
+        "time": "2017-04-20T14:50:49+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Jenssegers\\Date\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jens Segers",
+                "homepage": "https://jenssegers.com"
+            }
+        ],
+        "description": "A date library to help you work with dates in different languages",
+        "homepage": "https://github.com/jenssegers/date",
+        "keywords": [
+            "carbon",
+            "date",
+            "datetime",
+            "i18n",
+            "laravel",
+            "time",
+            "translation"
+        ]
+    },
+    {
+        "name": "laravel/socialite",
+        "version": "v3.0.5",
+        "version_normalized": "3.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/socialite.git",
+            "reference": "2771ab96004b6149d0974f8a469e08c8e54474a5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/socialite/zipball/2771ab96004b6149d0974f8a469e08c8e54474a5",
+            "reference": "2771ab96004b6149d0974f8a469e08c8e54474a5",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "~6.0",
+            "illuminate/contracts": "~5.4",
+            "illuminate/http": "~5.4",
+            "illuminate/support": "~5.4",
+            "league/oauth1-client": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.0|~5.0"
+        },
+        "time": "2017-04-20T16:24:07+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravel\\Socialite\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            }
+        ],
+        "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
+        "keywords": [
+            "laravel",
+            "oauth"
+        ]
+    },
+    {
+        "name": "myclabs/deep-copy",
+        "version": "1.6.1",
+        "version_normalized": "1.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/myclabs/DeepCopy.git",
+            "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+            "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "doctrine/collections": "1.*",
+            "phpunit/phpunit": "~4.1"
+        },
+        "time": "2017-04-12T18:52:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DeepCopy\\": "src/DeepCopy/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Create deep copies (clones) of your objects",
+        "homepage": "https://github.com/myclabs/DeepCopy",
+        "keywords": [
+            "clone",
+            "copy",
+            "duplicate",
+            "object",
+            "object graph"
+        ]
+    },
+    {
+        "name": "misterphilip/maintenance-mode",
+        "version": "dev-development",
+        "version_normalized": "dev-development",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/MisterPhilip/maintenance-mode.git",
+            "reference": "1f2fa264445a0cc396afa0b9595561fb031a9ccc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/MisterPhilip/maintenance-mode/zipball/1f2fa264445a0cc396afa0b9595561fb031a9ccc",
+            "reference": "1f2fa264445a0cc396afa0b9595561fb031a9ccc",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "5.3 - 5.4",
+            "nesbot/carbon": "~1.20",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-04-07T23:14:01+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "MisterPhilip\\MaintenanceMode": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Philip Lawrence",
+                "email": "philip@misterphilip.com",
+                "homepage": "http://misterphilip.com"
+            }
+        ],
+        "description": "An enhanced drop-in replacement for Laravel 5's maintenance mode",
+        "keywords": [
+            "l5",
+            "laravel",
+            "laravel5",
+            "maintenance"
+        ]
     }
 ]

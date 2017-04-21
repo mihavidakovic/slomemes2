@@ -21,7 +21,7 @@ class ChatterDiscussionController extends Controller
      */
     public function index(Request $request)
     {
-        $total = 10;
+        /*$total = 10;
         $offset = 0;
         if ($request->total) {
             $total = $request->total;
@@ -29,9 +29,11 @@ class ChatterDiscussionController extends Controller
         if ($request->offset) {
             $offset = $request->offset;
         }
-        $discussions = Models::discussion()->with('user')->with('post')->with('postsCount')->with('category')->orderBy('created_at', 'ASC')->take($total)->offset($offset)->get();
+        $discussions = Models::discussion()->with('user')->with('post')->with('postsCount')->with('category')->orderBy('created_at', 'ASC')->take($total)->offset($offset)->get();*/
 
-        return response()->json($discussions);
+        // Return an empty array to avoid exposing user data to the public.
+        // This index function is not being used anywhere.
+        return response()->json([]);
     }
 
     /**
@@ -62,6 +64,11 @@ class ChatterDiscussionController extends Controller
             'body_content'        => 'required|min:10',
             'chatter_category_id' => 'required',
         ]);
+
+        Event::fire(new ChatterBeforeNewDiscussion($request, $validator));
+        if (function_exists('chatter_before_new_discussion')) {
+            chatter_before_new_discussion($request, $validator);
+        }
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -190,8 +197,10 @@ class ChatterDiscussionController extends Controller
 
         $chatter_editor = config('chatter.editor');
 
-        // Dynamically register markdown service provider
-        \App::register('GrahamCampbell\Markdown\MarkdownServiceProvider');
+        if ($chatter_editor == 'simplemde') {
+            // Dynamically register markdown service provider
+            \App::register('GrahamCampbell\Markdown\MarkdownServiceProvider');
+        }
 
         return view('chatter::discussion', compact('discussion', 'posts', 'chatter_editor'));
     }

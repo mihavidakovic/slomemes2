@@ -3,7 +3,7 @@
   <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye"></i></div>
 </div>
 <ul class="comments">
- </ul>
+</ul>
  <div class="add-comment">
    <form method="POST" action="" class="commentForm">
     {!! mention()->asTextArea('content', old('content'), 'users', 'name', 'type-comment', 'lol') !!}

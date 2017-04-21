@@ -11,6 +11,7 @@ function prikaz(JSONposti) {
 	const commentForm = document.getElementsByClassName('commentForm')[0];	
 	const token = document.getElementsByName('_token');	
 	const loading = document.getElementsByClassName('loading')[0];	
+	const addComment = document.getElementsByClassName('add-comment')[0];	
 
 	zbirka = JSONposti;
 	prikazPostov();
@@ -45,6 +46,9 @@ function prikaz(JSONposti) {
 		slika.style.backgroundImage = "url(" + zbirka[indeks].url + ")"; //nastavimo sliko
 		/*V tem kosu kode pridobimo komentarje za vsak post*/
 		commentForm.action = "/comment/" + zbirka[indeks].id + "/add"; // spremeni id meme-a on the fly
+		addComment.setAttribute('data-id' , zbirka[indeks].id);  // doda id posta, za dodajanje komentarjev
+
+
 		$.ajax({
 		    type:"GET", 
 		    url: "/komentarji/" + zbirka[indeks].id, 
@@ -66,7 +70,7 @@ function prikaz(JSONposti) {
 					li.className= "comment";
 
 					ul.appendChild(li);
-					li.innerHTML = "<div class='top'> <p><a href='#'>username</a> <small>datum</small></p> </div> <div class='content'> <p>" + JSONkomentarji[i].content + "</p></div>";
+					li.innerHTML = "<div class='top'> <p><a href='/uporabnik/" + JSONkomentarji[i].user.name + "'>" + JSONkomentarji[i].user.name + "</a> <small>" +  moment(JSONkomentarji[i].created_at).add('2', 'hours').fromNow() + "</small></p> </div> <div class='content'> <p>" + JSONkomentarji[i].content + "</p></div>";
 				}
 			}
 		}

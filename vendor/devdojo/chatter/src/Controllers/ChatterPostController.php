@@ -12,6 +12,7 @@ use Event;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as Controller;
 use Illuminate\Support\Facades\Mail;
+use Purifier;
 use Validator;
 
 class ChatterPostController extends Controller
@@ -23,7 +24,7 @@ class ChatterPostController extends Controller
      */
     public function index(Request $request)
     {
-        $total = 10;
+        /*$total = 10;
         $offset = 0;
         if ($request->total) {
             $total = $request->total;
@@ -31,9 +32,11 @@ class ChatterPostController extends Controller
         if ($request->offset) {
             $offset = $request->offset;
         }
-        $posts = Models::post()->with('user')->orderBy('created_at', 'DESC')->take($total)->offset($offset)->get();
+        $posts = Models::post()->with('user')->orderBy('created_at', 'DESC')->take($total)->offset($offset)->get();*/
 
-        return response()->json($posts);
+        // This is another unused route
+        // we return an empty array to not expose user data to the public
+        return response()->json([]);
     }
 
     /**
@@ -49,6 +52,11 @@ class ChatterPostController extends Controller
         $validator = Validator::make($stripped_tags_body, [
             'body' => 'required|min:10',
         ]);
+
+        Event::fire(new ChatterBeforeNewResponse($request, $validator));
+        if (function_exists('chatter_before_new_response')) {
+            chatter_before_new_response($request, $validator);
+        }
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -95,14 +103,14 @@ class ChatterPostController extends Controller
 
             $chatter_alert = [
                 'chatter_alert_type' => 'success',
-                'chatter_alert'      => 'Odgovor uspešno objavljen!',
+                'chatter_alert'      => 'Response successfully submitted to '.config('chatter.titles.discussion').'.',
                 ];
 
             return redirect('/'.config('chatter.routes.home').'/'.config('chatter.routes.discussion').'/'.$category->slug.'/'.$discussion->slug)->with($chatter_alert);
         } else {
             $chatter_alert = [
                 'chatter_alert_type' => 'danger',
-                'chatter_alert'      => 'Oprosti, prišlo je do napake.',
+                'chatter_alert'      => 'Sorry, there seems to have been a problem submitting your response.',
                 ];
 
             return redirect('/'.config('chatter.routes.home').'/'.config('chatter.routes.discussion').'/'.$category->slug.'/'.$discussion->slug)->with($chatter_alert);
@@ -153,7 +161,7 @@ class ChatterPostController extends Controller
 
         $post = Models::post()->find($id);
         if (!Auth::guest() && (Auth::user()->id == $post->user_id)) {
-            $post->body = strip_tags($request->body);
+            $post->body = Purifier::clean($request->body);
             $post->save();
 
             $discussion = Models::discussion()->find($post->chatter_discussion_id);
@@ -165,7 +173,7 @@ class ChatterPostController extends Controller
 
             $chatter_alert = [
                 'chatter_alert_type' => 'success',
-                'chatter_alert'      => 'Uspešno urejena objava.',
+                'chatter_alert'      => 'Successfully updated the '.config('chatter.titles.discussion').'.',
                 ];
 
             return redirect('/'.config('chatter.routes.home').'/'.config('chatter.routes.discussion').'/'.$category->slug.'/'.$discussion->slug)->with($chatter_alert);

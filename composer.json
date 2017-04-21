@@ -15,7 +15,8 @@
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "nesbot/carbon": "^1.22",
-        "unicodeveloper/laravel-mentions": "^1.1"
+        "unicodeveloper/laravel-mentions": "^1.1",
+        "misterphilip/maintenance-mode": "dev-development"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

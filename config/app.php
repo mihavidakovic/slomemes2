@@ -183,6 +183,8 @@ return [
         Gstt\Achievements\AchievementsServiceProvider::class,
         Unicodeveloper\Mention\MentionServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        MisterPhilip\MaintenanceMode\MaintenanceModeServiceProvider::class,
+        MisterPhilip\MaintenanceMode\MaintenanceCommandServiceProvider::class,
     ],
 
     /*

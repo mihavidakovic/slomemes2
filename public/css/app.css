@@ -1483,7 +1483,7 @@ body {
     height: calc(100% - 39px - 60px);
     max-height: calc(100% - 39px - 60px);
     min-height: 200px;
-    padding: 5px 0px;
+    padding: 0px 0px;
     margin: 0px 0 0;
     list-style: none;
     -ms-overflow-y: auto;
@@ -1526,13 +1526,27 @@ body {
       width: 100%;
       float: left;
       border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-      padding: 10px 15px; }
+      padding: 10px 15px;
+      -webkit-transition: 150ms opacity ease-in-out;
+      -moz-transition: 150ms opacity ease-in-out;
+      transition: 150ms opacity ease-in-out; }
       .comments-wrap .comments .comment:first-child {
-        padding-top: 5px; }
+        padding-top: 10px; }
       .comments-wrap .comments .comment:last-child {
         border-bottom: none; }
       .comments-wrap .comments .comment:nth-child(even) {
         background-color: rgba(0, 0, 0, 0.03); }
+      .comments-wrap .comments .comment.new {
+        opacity: 0.2;
+        -webkit-animation: newComment 900ms ease-in-out;
+        -moz-animation: newComment 900ms ease-in-out;
+        animation: newComment 900ms ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards; }
       .comments-wrap .comments .comment .top {
         width: 100%;
         float: left;
@@ -1549,9 +1563,25 @@ body {
             font-weight: 700; }
             .comments-wrap .comments .comment .top p a:hover {
               color: #dd3036; }
+            .comments-wrap .comments .comment .top p a span {
+              width: 100px;
+              height: 10px;
+              background-color: rgba(0, 0, 0, 0.4);
+              display: block;
+              float: left;
+              margin-top: 2px;
+              margin-bottom: 4px; }
           .comments-wrap .comments .comment .top p small {
             float: right;
             color: rgba(0, 0, 0, 0.6); }
+            .comments-wrap .comments .comment .top p small span {
+              width: 100px;
+              height: 10px;
+              background-color: rgba(0, 0, 0, 0.4);
+              display: block;
+              float: left;
+              margin-top: 2px;
+              margin-bottom: 4px; }
           .comments-wrap .comments .comment .top p .odgovori {
             margin-left: 10px; }
       .comments-wrap .comments .comment .content {
@@ -1563,6 +1593,24 @@ body {
           font-size: 0.9em;
           margin: 0;
           padding: 0; }
+
+@-webkit-keyframes newComment {
+  0% {
+    opacity: 0.2; }
+  100% {
+    opacity: 0.6; } }
+
+@-moz-keyframes newComment {
+  0% {
+    opacity: 0.2; }
+  100% {
+    opacity: 0.6; } }
+
+@keyframes newComment {
+  0% {
+    opacity: 0.2; }
+  100% {
+    opacity: 0.6; } }
 
 .popup-wrap {
   position: fixed;

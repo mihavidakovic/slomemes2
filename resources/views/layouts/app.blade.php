@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
     <meta name="Description" content="Najboljši slovenski memesi ustvarjeni z našim novim meme generatorjem!" />
     <meta name="Keywords" content="slo memes, slo, memes, memeji, slovenian_memes, slovenian memes, smešne slike, zabavne slike, vici, vic, smešno, lol" />
     <meta name=“robots” content=index,follow>

@@ -204,6 +204,33 @@ body {
         .kmalu .center h2 {
           font-size: 1.5em;
           padding: 0 20px; } }
+    .kmalu .center h3 {
+      width: 100%;
+      float: left;
+      color: #FFF;
+      font-size: 1.4em;
+      font-weight: 300;
+      line-height: 1.4em;
+      margin: 30px 0 0;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+      .kmalu .center h3 span {
+        font-weight: 500;
+        text-decoration: underline; }
+      @media (max-width: 767px) and (min-width: 641px) {
+        .kmalu .center h3 {
+          font-size: 2em;
+          padding: 0 20px; } }
+      @media (max-width: 640px) and (min-width: 481px) {
+        .kmalu .center h3 {
+          font-size: 1.5em;
+          padding: 0 20px; } }
+      @media (max-width: 480px) {
+        .kmalu .center h3 {
+          font-size: 1.5em;
+          padding: 0 20px; } }
     .kmalu .center .sharing {
       width: 100%;
       float: left;

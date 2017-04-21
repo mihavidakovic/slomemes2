@@ -29,7 +29,7 @@ class HomeController extends Controller
     }
 
     public function komentarjiJSON($id, Request $request) {
-        $komentarji = Comment::where('post_id', '=', $id)->get();
+        $komentarji = Comment::where('post_id', '=', $id)->with('user')->get();
         return response()->json(['komentarji' => $komentarji])->withCallback($request->input('callback'));
     }
 

@@ -81,7 +81,7 @@
 		height: calc(100% - 39px - 60px)
 		max-height: calc(100% - 39px - 60px) 
 		min-height: 200px
-		padding: 5px 0px
+		padding: 0px 0px
 		margin: 0px 0 0
 		list-style: none
 		-ms-overflow-y: auto
@@ -118,12 +118,18 @@
 			float: left
 			border-bottom: 1px solid rgba(#000, 0.07)
 			padding: 10px 15px
+			+transition(150ms opacity ease-in-out)
 			&:first-child
-				padding-top: 5px
+				padding-top: 10px
 			&:last-child
 				border-bottom: none 
 			&:nth-child(even)
-				background-color: rgba(#000, 0.03) 
+				background-color: rgba(#000, 0.03)
+			&.new
+				opacity: 0.2
+				+animation(newComment 900ms ease-in-out)
+				+animation-iteration-count(infinite)
+				+animation-fill-mode(forwards)
 			.top
 				width: 100%
 				float: left
@@ -140,9 +146,25 @@
 						font-weight: 700
 						&:hover
 						 color: darken($main-color, 5%) 
+						span
+							width: 100px
+							height: 10px
+							background-color: rgba(#000, 0.4)
+							display: block
+							float: left 
+							margin-top: 2px
+							margin-bottom: 4px
 					small
 						float: right
 						color: rgba(#000, 0.6) 
+						span
+							width: 100px
+							height: 10px
+							background-color: rgba(#000, 0.4)
+							display: block
+							float: left 
+							margin-top: 2px
+							margin-bottom: 4px
 					.odgovori
 						margin-left: 10px
 			.content
@@ -154,3 +176,9 @@
 					font-size: 0.9em
 					margin: 0
 					padding: 0 
+
++keyframes(newComment)
+	0%
+		opacity: 0.2
+	100%
+		opacity: 0.6

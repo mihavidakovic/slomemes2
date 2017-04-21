@@ -101,3 +101,66 @@ body
 		background-position: -468px 0
 	100%
 		background-position: 468px 0
+
+
+.kmalu
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 50%
+	left: 50%
+	+transform(translate(-50%, -50%))
+	background-color: $main-color 
+	.center
+		width: 60%
+		height: 100%
+		position: absolute
+		top: 50%
+		left: 50%
+		text-align: center
+		+transform(translate(-50%, -50%))
+		+breakpoint(xs)
+			width: 100%
+		+breakpoint(xxs)
+			width: 100%
+		+breakpoint(xxxs)
+			width: 100%
+		h1
+			width: 500px
+			height: 293px
+			float: left
+			position: absolute
+			left: 50%
+			top: 50px
+			+transform(translateX(-37%))
+			a
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				float: left
+				background-image: url(../img/logo.png) 
+				-webkit-background-size: cover 
+				-o-background-size: cover 
+				background-size: cover 
+				text-indent: -9999px 
+		h2
+			position: absolute
+			width: 100%
+			top: 60%
+			+transform(translateY(-60%))
+			color: #FFF 
+			font-size: 2em
+			font-weight: 300 
+			line-height: 1.5em
+			+breakpoint(xs)
+				font-size: 1.5em
+				padding: 0 20px
+			+breakpoint(xxs)
+				font-size: 1.5em
+				padding: 0 20px
+			+breakpoint(xxxs)
+				font-size: 1.5em
+				padding: 0 20px
+				 

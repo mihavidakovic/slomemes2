@@ -50,8 +50,15 @@ class UserController extends Controller
         if (Auth::check()) {
              $this->validate($request, [
                 'forum_podpis' => 'max:100',
+                'avatar' => 'mimes:jpeg,bmp,png|max:5000'
             ]);
             $user = User::find(Auth::user()->id);
+            if ($request->hasFile('avatar')) {
+                $path = $request->file('avatar')->store(
+                    'avatars/'.$request->user()->id, 's3'
+                );
+                $user->avatar = $path;
+            }
             $user->forum_podpis = $request->input('forum_podpis');
             $user->save();
             \Session::flash('flash_message','Spremembe uspešno shranjene.');

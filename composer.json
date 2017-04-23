@@ -14,9 +14,10 @@
         "laravel/framework": "5.4.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "misterphilip/maintenance-mode": "dev-development",
         "nesbot/carbon": "^1.22",
-        "unicodeveloper/laravel-mentions": "^1.1",
-        "misterphilip/maintenance-mode": "dev-development"
+        "unicodeveloper/laravel-mentions": "^1.1"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

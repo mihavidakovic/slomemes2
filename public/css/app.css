@@ -664,6 +664,24 @@ body {
         font-size: 0.7em;
         color: rgba(0, 0, 0, 0.6); }
 
+.uredi-profil .avatar-manage {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px; }
+
+.uredi-profil .current-avatar .avatar {
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 100%;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-border-radius: 100%;
+  border-radius: 100%; }
+
+.uredi-profil .avatar-upload {
+  margin-top: 20px; }
+
 #chatter {
   margin-top: 51px;
   float: left;
@@ -1109,9 +1127,9 @@ body {
         background-color: rgba(255, 255, 255, 0.3); }
     .picture-wrap .title h2 {
       position: absolute;
-      width: calc(100% - 100px - 80px);
+      width: calc(100% - 110px);
       display: inline-block;
-      max-width: calc(100% - 100px - 90px);
+      max-width: calc(100% - 110px);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

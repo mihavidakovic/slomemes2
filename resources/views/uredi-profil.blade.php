@@ -20,8 +20,19 @@
             @endif
             @if(Session::has('flash_message'))
                 <div class="alert alert-success"><span class="glyphicon glyphicon-ok" style="margin-right: 10px;"></span><em> {!! session('flash_message') !!}</em></div>
-            @endif   
-            <form method="post">
+            @endif
+            <form method="post" enctype="multipart/form-data">
+            <div class="avatar-manage">
+                <div class="col-lg-4 current-avatar">
+                  @if($user->avatar)
+                    <div class="avatar" style="background-image: url({{Storage::disk('s3')->url($user->avatar)}});"></div>
+                  @endif
+                </div>
+                <div class="form-group col-lg-8 avatar-upload">
+                  <label for="avatar">Avatar</label>
+                  <input type="file" class="form-control" id="avatar" name="avatar">
+                </div>
+              </div>
               <div class="form-group">
                 <label for="username">Uporabniško ime</label>
                 <input type="text" class="form-control" id="username" value="{{$user->name}}" disabled="">

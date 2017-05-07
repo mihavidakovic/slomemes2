@@ -29,9 +29,6 @@
     <script src="/js/jquery.atwho.js"></script>
     <script src="{{ asset('js/moment.js') }}"></script>
     <script type="text/javascript" src="/js/app.js"></script>
-    @if(Request::is('meme/ustvari'))
-        <script type="text/javascript" src="/js/index.js"></script>
-    @endif
     @include('mentions::assets')
     <script>
         window.Laravel = {!! json_encode([
@@ -135,8 +132,11 @@
   ga('send', 'pageview');
 
 </script>
+@if(Request::is('/'))
+    <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+@endif
 @if(Request::is('meme/ustvari'))
-    <script type="text/javascript" src="/js/meme-generator.js"></script>
+    <script type="text/javascript" src="{{ asset('js/meme-generator.js') }}"></script>
 @endif
 
 </body>

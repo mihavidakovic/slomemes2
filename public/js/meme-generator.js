@@ -29,7 +29,6 @@ function dodajUrl() {
 	canvas.style.backgroundImage = "url('"+ urlSlike + "')";
 	//potreben element za kasnejšo manipulacijo
 	img = new Image();
-	img.setAttribute('crossOrigin', 'anonymous');
 	img.src = urlSlike;
 	ctx.drawImage(img, 0, 0, 500, 500);
 }

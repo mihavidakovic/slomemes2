@@ -1,6 +1,7 @@
 moment.locale('sl');
 function prikaz(JSONposti) {
 	//Elementi
+	const glasovi = document.getElementsByClassName('glasovi')[0];
 	const naslov = document.getElementsByClassName('naslov')[0];
 	const ustvarjeno = document.getElementsByClassName('ustvarjeno')[0];
 	const username = document.getElementsByClassName('username')[0];
@@ -22,7 +23,7 @@ function prikaz(JSONposti) {
  			zbirka = [];
 			$.ajax({
 		    type:"GET", 
-		    url: "/posti", 
+		    url: "/posti/168/48", 
 		    success: function(JSONposti) {		    		
 		            prikaz1(JSONposti.posti);
 		        },
@@ -35,11 +36,37 @@ function prikaz(JSONposti) {
 		prikazPostov();
 	}
 
+	function upvote() {
+			$.ajax({
+		    type:"GET", 
+		    url: "'meme/" + indeks + "/upvote'", 
+		    success: function(JSONposti) {		    		
+		            prikaz1(JSONposti.posti);
+		        },
+		   dataType: "jsonp"
+		});
+
+	}
+
+	function downvote() {
+			$.ajax({
+		    type:"GET", 
+		    url: "'meme/" + indeks + "/downvote'", 
+		    success: function(JSONposti) {		    		
+		            prikaz1(JSONposti.posti);
+		        },
+		   dataType: "jsonp"
+		});
+
+	}
+
+
 	//osnovna funkcija prikaza postov
 	function prikazPostov() {
 		var indeks = Math.floor(Math.random() * zbirka.length); //indeks se bo določal le v velikosti tabele zbirka, kar je odličen način omejevanja
 		naslov.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		ustvarjeno.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
+		glasovi.innerHTML = naslov.innerHTML + zbirka[indeks].aggregate; //nastavimo tekst na vrednost polja v json zbirki z trenutnim indeksom
 		naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title; //nastavimo tekst na vrednost polja v json zbirki z trenutnim indeksom
 		ustvarjeno.innerHTML = moment(zbirka[indeks].created_at).add('2', 'hours').fromNow();
 		username.innerHTML = zbirka[indeks].user.name;
@@ -70,9 +97,17 @@ function prikaz(JSONposti) {
 					li.className= "comment";
 
 					ul.appendChild(li);
-					li.innerHTML = "<div class='top'> <p><a href='/uporabnik/" + JSONkomentarji[i].user.name + "'>" + JSONkomentarji[i].user.name + "</a> <small>" +  moment(JSONkomentarji[i].created_at).add('2', 'hours').fromNow() + "</small></p> </div> <div class='content'> <p>" + JSONkomentarji[i].content + "</p></div>";
+					li.innerHTML = "<div class='top'> <p><a href='/uporabnik/" + JSONkomentarji[i].user.name + "'><user class='uporabnik'>" + JSONkomentarji[i].user.name + "</user></a> <small>" +  moment(JSONkomentarji[i].created_at).add('2', 'hours').fromNow() + "</small></p> </div> <div class='content'> <p>" + JSONkomentarji[i].content + "</p></div>";
 				}
 			}
+		    $('.comments .comment .uporabnik').mouseover(function() {
+		        var uporabnik = $(this);
+		        uporabnik.append('<div class="uporabnik-info">ddasdas</div>');
+		    });
+		    $('.comments .comment .uporabnik').mouseleave(function() {
+		        var uporabnik = $(this);
+		        uporabnik.parent().find('.uporabnik-info').remove();
+		    });
 		}
 		zbirka.splice(indeks, 1); //iz zbirke odstranimo ogledan post
 	}
@@ -104,7 +139,7 @@ function pridobiPoste() {
  	zbirka = [];
 	$.ajax({
 		    type:"GET", 
-		    url: "/posti", 
+		    url: "/posti/48/0", 
 		    success: function(JSONposti) {		    		
 		            prikaz(JSONposti.posti);
 

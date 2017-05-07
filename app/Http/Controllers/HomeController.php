@@ -33,13 +33,14 @@ class HomeController extends Controller
         return response()->json(['komentarji' => $komentarji])->withCallback($request->input('callback'));
     }
 
-    public function postiJSON(Request $request) {
+    public function postiJSON(Request $request, $od, $do) {
         if (Auth::check()) {
             $user_id = Auth::user()->id;
             $posti = Post::with('user')
-            ->whereDoesntHave("glasovi")
-            ->whereBetween('posts.created_at', array(Carbon::now()->subHours(48), Carbon::now()))
-            ->orderBy('posts.created_at', 'DESC')
+            ->whereDoesntHave('glasovi', function ($query) use ($user_id) {
+                    $query->where('user_id', $user_id);
+                })            
+            ->whereBetween('posts.created_at', array(Carbon::now()->subHours($od), Carbon::now()->subHours($do)))
             ->orderByVotes()
             ->take(20)
             ->get();

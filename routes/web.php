@@ -25,7 +25,7 @@ Route::get('/',[
 	'uses' => 'HomeController@domov'
 ]);
 
-Route::get('posti',[
+Route::get('posti/{od}/{do}',[
 	'as' => 'posti-json',
 	'uses' => 'HomeController@postiJSON'
 ]);

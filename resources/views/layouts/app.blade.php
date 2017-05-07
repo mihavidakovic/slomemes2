@@ -24,13 +24,14 @@
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/meme-generator.js') }}"></script>
     @yield('js')
     <script src="/js/jquery.caret.js"></script>
     <script src="/js/jquery.atwho.js"></script>
     <script src="{{ asset('js/moment.js') }}"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
+    @if(Request::is('meme/ustvari'))
+        <script type="text/javascript" src="/js/index.js"></script>
+    @endif
     @include('mentions::assets')
     <script>
         window.Laravel = {!! json_encode([
@@ -134,6 +135,9 @@
   ga('send', 'pageview');
 
 </script>
+@if(Request::is('meme/ustvari'))
+    <script type="text/javascript" src="/js/meme-generator.js"></script>
+@endif
 
 </body>
 </html>

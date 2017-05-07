@@ -1,7 +1,7 @@
 <div class="col-lg-8 col-md-8 col-sm-8 picture-wrap">
     <div class="title">
       <div class="votes">
-          <span><i class="ion-thumbsup"></i> 0</span>
+          <span><i class="ion-thumbsup"></i> <span class="glasovi">0</span></span>
       </div>
         <h2 class="naslov"><span></span></h2>
       <div class="hide-comments" data-toggle="tooltip" data-placement="left"  title="Skrij komentarje"><i class="ion ion-eye-disabled"></i></div>

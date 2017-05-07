@@ -9,7 +9,15 @@
             <p>Ustvari svoj meme</p>
           </header>
           <div class="content">
-            <p>Čakamo na mojstrovine glavnega developerja Josipa</p>
+            <input type="text" id="url" name="2" placeholder="Vnesi url slike">
+            <input oninput="memePreview()" type="text" id="tekst" name="1" placeholder="Tekst">
+            <canvas id="meme"></canvas>
+            <br>
+            <button id="dodaj">Dodaj</button>
+            <br>
+            <button id="shrani">Shrani</button>
+            <br>
+            <button id="reset">Reset</button>
           </div>
         </div>
       </div>

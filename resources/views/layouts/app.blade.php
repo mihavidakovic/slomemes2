@@ -135,9 +135,7 @@
 @if(Request::is('/'))
     <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 @endif
-@if(Request::is('/meme/ustvari'))
     <script type="text/javascript" src="{{ asset('js/meme-generator.js') }}"></script>
-@endif
 
 </body>
 </html>

@@ -122,6 +122,8 @@
 
         @yield('content')
     </div>
+<script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/meme-generator.js') }}"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -132,10 +134,6 @@
   ga('send', 'pageview');
 
 </script>
-@if(Request::is('/'))
-    <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
-@endif
-    <script type="text/javascript" src="{{ asset('js/meme-generator.js') }}"></script>
 
 </body>
 </html>

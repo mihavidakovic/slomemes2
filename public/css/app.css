@@ -1753,10 +1753,33 @@ body {
         -webkit-animation-fill-mode: forwards;
         -moz-animation-fill-mode: forwards;
         animation-fill-mode: forwards; }
+      .comments-wrap .comments .comment .uporabnik {
+        position: relative; }
+      .comments-wrap .comments .comment .uporabnik-info {
+        position: absolute;
+        left: 0;
+        top: -70px;
+        width: 150px;
+        height: 70px;
+        background-color: #FFF;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        z-index: 100;
+        opacity: 1; }
+        .comments-wrap .comments .comment .uporabnik-info:after {
+          content: "";
+          position: absolute;
+          bottom: -7px;
+          left: 20px;
+          height: 0;
+          width: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 6px solid rgba(0, 0, 0, 0.05); }
       .comments-wrap .comments .comment .top {
         width: 100%;
         float: left;
-        opacity: 0.8;
         margin-bottom: 5px; }
         .comments-wrap .comments .comment .top p {
           margin: 0;

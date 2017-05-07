@@ -9,8 +9,10 @@ $(document).ready(function(){
     	$('.main').removeClass('comments-off');
     });
     $('.sharing .messenger').click(function() {
-    	window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
+        window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
     });
+
+
 
     $('.commentForm').on('submit', function(e) {
         e.preventDefault();
@@ -36,7 +38,7 @@ $(document).ready(function(){
             success: function(data) {
                 forma.find('.type-comment').val('');
                 comments.find('.new').remove();            
-                comments.append("<li class='comment'><div class='top'> <p><a href='/uporabnik/" + data.user.name + "'>" + data.user.name + "</a> <small>" + moment(data.comment.created_at).add('2', 'hours').fromNow() + "</small></p> </div> <div class='content'> <p>" + data.comment.content + "</p></div></li>");
+                comments.append("<li class='comment'><div class='top'> <p><a href='/uporabnik/" + data.user.name + "'><user class='uporabnik'>" + data.user.name + "</user></a> <small>" + moment(data.comment.created_at).add('2', 'hours').fromNow() + "</small></p> </div> <div class='content'> <p>" + data.comment.content + "</p></div></li>");
             },
             error: function() {
                 setTimeout(function() {

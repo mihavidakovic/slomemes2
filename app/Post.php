@@ -27,7 +27,7 @@ class Post extends Model
     public function scopeOrderByVotes($query)
     {
         $query->leftJoin('glasovi', 'glasovi.post_id', '=', 'posts.id')
-            ->selectRaw('posts.*, count(glasovi.id) as aggregate')
+            ->selectRaw('posts.*, count(glasovi.post_id) as aggregate')
             ->groupBy('posts.id')
             ->orderBy('aggregate', 'desc');
     }

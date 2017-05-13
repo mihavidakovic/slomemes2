@@ -24,6 +24,7 @@ function prikaz(JSONposti) {
 			$.ajax({
 		    type:"GET", 
 		    url: "/posti/168/48", 
+
 		    success: function(JSONposti) {		    		
 		            prikaz1(JSONposti.posti);
 		        },
@@ -36,26 +37,32 @@ function prikaz(JSONposti) {
 		prikazPostov();
 	}
 
-	function upvote() {
-			$.ajax({
-		    type:"GET", 
-		    url: "'meme/" + indeks + "/upvote'", 
-		    success: function(JSONposti) {		    		
-		            prikaz1(JSONposti.posti);
+	function gor(indeks) {
+		var id = zbirka[indeks].id;
+		id = id - 1;
+		$.ajax({
+		    type:"POST", 
+		    url: "meme/" + id + "/upvote", 
+  			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		    success: function(data) {		    		
+		            console.log(data);
 		        },
-		   dataType: "jsonp"
+		   dataType: "json"
 		});
 
 	}
 
-	function downvote() {
-			$.ajax({
-		    type:"GET", 
-		    url: "'meme/" + indeks + "/downvote'", 
-		    success: function(JSONposti) {		    		
-		            prikaz1(JSONposti.posti);
+	function dol(indeks) {
+		var id = zbirka[indeks].id;
+		id = id - 1;
+		$.ajax({
+		    type:"POST", 
+		    url: "meme/" + id + "/downvote", 
+  			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		    success: function(data) {		    		
+		            console.log(data);
 		        },
-		   dataType: "jsonp"
+		   dataType: "json"
 		});
 
 	}
@@ -63,7 +70,7 @@ function prikaz(JSONposti) {
 
 	//osnovna funkcija prikaza postov
 	function prikazPostov() {
-		var indeks = Math.floor(Math.random() * zbirka.length); //indeks se bo določal le v velikosti tabele zbirka, kar je odličen način omejevanja
+		indeks = Math.floor(Math.random() * zbirka.length); //indeks se bo določal le v velikosti tabele zbirka, kar je odličen način omejevanja
 		naslov.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		ustvarjeno.innerHTML = ""; //ponastavimo tekst saj se v nasprotnem primeru le seštevajo od prej stringi
 		glasovi.innerHTML = naslov.innerHTML + zbirka[indeks].aggregate; //nastavimo tekst na vrednost polja v json zbirki z trenutnim indeksom
@@ -74,7 +81,7 @@ function prikaz(JSONposti) {
 		/*V tem kosu kode pridobimo komentarje za vsak post*/
 		commentForm.action = "/comment/" + zbirka[indeks].id + "/add"; // spremeni id meme-a on the fly
 		addComment.setAttribute('data-id' , zbirka[indeks].id);  // doda id posta, za dodajanje komentarjev
-
+		console.log(zbirka[indeks].id);
 
 		$.ajax({
 		    type:"GET", 
@@ -114,6 +121,20 @@ function prikaz(JSONposti) {
 
 	//Funkcija naprej se sproži ko likamo ali dislikamo post
 	function naprej() {
+		gor(indeks);
+		loading.className += " visible";
+		setTimeout(function() {
+			$(loading).removeClass('visible');
+		}, 500);
+		if (zbirka.length == 0) { //ko pregledamo zbirko
+			nafilajZbirko();
+		} else {
+				prikazPostov();
+			}
+		}
+
+	function naprej1() {
+		dol(indeks);
 		loading.className += " visible";
 		setTimeout(function() {
 			$(loading).removeClass('visible');
@@ -127,9 +148,11 @@ function prikaz(JSONposti) {
 
 
 
+
+
 	//Event listenerji
 	like.addEventListener('click', naprej);
-	downvote.addEventListener('click', naprej);
+	downvote.addEventListener('click', naprej1);
 
 }
 

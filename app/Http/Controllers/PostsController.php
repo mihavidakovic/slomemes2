@@ -51,6 +51,10 @@ class PostsController extends Controller
 		return view('ustvari');
 	}
 
+	public function ustvariPost(Request $request) {
+		return response()->json($request);
+	}
+
 	// IZBRIŠI MEME
 	public function memeDelete($id) {
 		$m = Post::find($id);
@@ -66,8 +70,8 @@ class PostsController extends Controller
 		$glas->post_id = $id;
 		$glas->type = 1;
 		$glas->save();
+		return response()->json(["id" => $id, "title" => $post->title]);
 
-		return redirect('/');
 	}
 
 	public function postDownvote($id) {
@@ -77,8 +81,8 @@ class PostsController extends Controller
 		$glas->post_id = $id;
 		$glas->type = 2;
 		$glas->save();
+		return response()->json(["id" => $id, "title" => $post->title]);
 
-		return redirect('/');
 	}
 
 }

@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" content="Najboljši slovenski memesi ustvarjeni z našim novim meme generatorjem!" />
-    <meta name="Keywords" content="slo memes, slo, memes, memeji, slovenian_memes, slovenian memes, smešne slike, zabavne slike, vici, vic, smešno, lol" />
-    <meta name=“robots” content=index,follow>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -28,6 +25,7 @@
     <script src="/js/jquery.caret.js"></script>
     <script src="/js/jquery.atwho.js"></script>
     <script src="{{ asset('js/moment.js') }}"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     @include('mentions::assets')
     <script>
@@ -37,7 +35,7 @@
     </script>
     @yield('css')
 </head>
-<body>
+<body onload="pridobiPoste()">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -122,18 +120,8 @@
 
         @yield('content')
     </div>
-<script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/meme-generator.js') }}"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-70811643-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    <script src="/js/meme-generator.js"></script>
 
 </body>
 </html>

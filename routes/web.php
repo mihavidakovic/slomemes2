@@ -103,6 +103,11 @@ Route::get('meme/ustvari',[
 	'uses' => 'PostsController@ustvariGet'
 ]);
 
+Route::post('meme/ustvari',[
+	'as' => 'meme-ustvari-post',
+	'uses' => 'PostsController@ustvariPost'
+]);
+
 
 // IZBRIŠI MEME
 Route::get('meme/{id}/delete',[
